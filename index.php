@@ -1,12 +1,29 @@
 <?php
+
+$alternativa="";
+
+if(isset($_POST["calcular"])){
+    $botao = $_POST["calcular"];
+    if(isset($_POST["alternativa"])){
+        $alternativa = $_POST["alternativa"];
+     
+    }
+}
 $perguntas=array();
-$perguntas["questão1"]=array("a"=>false,"b"=>false,"c"=>true,"d"=>false);
 
 
+    $perguntas[0]["questao"]="1. qual o verdadeiro nome do lanterna verde?";
+    $perguntas[0][0]=array("alternativa 1",false);
+    $perguntas[0][1]=array("alternativa 2",false);
+    $perguntas[0][2]=array("alternativa 3",true);
+    $perguntas[0][3]=array("alternativa 4",false);
 
 
-
-
+if ($perguntas[0][$alternativa][1]==true){
+    echo "Acertou";
+}else{
+    echo "Errou";
+}
 
 
 ?>
@@ -26,13 +43,45 @@ $perguntas["questão1"]=array("a"=>false,"b"=>false,"c"=>true,"d"=>false);
 <div class="container-fluid">
 
 <form method="post" action="index.php">
+<label>
+    <?php
+    echo $perguntas[0]["questao"]
+    ?>
+</label>
 
-<input type="text" name="questao1"><br>
+<br>
 
-<input type="submit" name="responder">
+<input type="radio" name="alternativa" value="0">
+<label><?php
+    echo $perguntas[0][0][0]
+?></label>
+
+<br>
+
+<input type="radio" name="alternativa" value="1">
+<label><?php
+    echo $perguntas[0][1][0]
+?></label>
+
+<br>
+
+<input type="radio" name="alternativa" value="2">
+<label><?php
+    echo $perguntas[0][2][0]
+?></label> 
+<br>
+
+<input type="radio" name="alternativa" value="3">
+<label><?php
+    echo $perguntas[0][3][0]
+?></label>
+
+<br>
+
+<input type="submit" name="calcular">
+
 
 </form>
-
 
 
 </div>
