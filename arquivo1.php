@@ -1,12 +1,46 @@
 <?php
 
-    $alternativa="";
+    $alternativa1="";
+    $alternativa2="";
+    $alternativa3="";
+    $alternativa4="";
+    $alternativa5="";
+    $alternativa6="";
 
     if(isset($_POST["calcular"])){
         $botao = $_POST["calcular"];
-        if(isset($_POST["alternativa"])){
-            $alternativa = $_POST["alternativa"];
+        if(isset($_POST["alternativa1"])){
+            $alternativa1 = $_POST["alternativa1"];
             
+        }
+        if(isset($_POST["alternativa2"])){
+            $alternativa2 = $_POST["alternativa2"];
+            
+        }
+        if(isset($_POST["alternativa3"])){
+            $alternativa3 = $_POST["alternativa3"];
+            
+        }
+        if(isset($_POST["alternativa4"])){
+            $alternativa4 = $_POST["alternativa4"];
+            
+        }
+        if(isset($_POST["alternativa5"])){
+            $alternativa5 = $_POST["alternativa5"];
+            
+        }
+        if(isset($_POST["alternativa6"])){
+            $alternativa6 = $_POST["alternativa6"];
+            
+        }
+        
+    }
+    if (isset($_POST["navegacao"])) {
+        # code...
+        $nav=$_POST["navegacao"];
+        if ($nav=="Próxima") {
+            # code...
+            $questoes[1];
         }
     }
     
@@ -28,23 +62,23 @@
                 echo "Errou";
             }
         }
-        echo"<form method='post' action='index.php'>
+        echo"<form method='post' action='arquivo1.php'>
         <label>"
         . $perguntas[0]["questao"].
         "</label><br>        
-        <input type='radio' name='alternativa' value='0'>
+        <input type='radio' name='alternativa1' value='0'>
         <label>"
         . $perguntas[0][0][0].
         "</label><br>
-        <input type='radio' name='alternativa' value='1'>
+        <input type='radio' name='alternativa1' value='1'>
         <label>"
         . $perguntas[0][1][0] .
         " </label><br>
-        <input type='radio' name='alternativa' value='2'>
+        <input type='radio' name='alternativa1' value='2'>
         <label>"
         . $perguntas[0][2][0].
         "</label><br>
-        <input type='radio' name='alternativa' value='3'>
+        <input type='radio' name='alternativa1' value='3'>
         <label>"
         . $perguntas[0][3][0].
         "</label><br><br>        
@@ -52,35 +86,35 @@
         </form>";
     }
 
-function questao2($alternativa){
+    function questao2($alternativa){
 
-    $perguntas[1]["questao"]="2. Qual o nome de nascença do Superman?";
-    $perguntas[1][0]=array("Kal-El",true);
-    $perguntas[1][1]=array("Clark Kent",false);
-    $perguntas[1][2]=array("Jor-El",false);
-    $perguntas[1][3]=array("Virgil Hawkins",false);
-    if(is_numeric($alternativa)){
+        $perguntas[1]["questao"]="2. Qual o nome de nascença do Superman?";
+        $perguntas[1][0]=array("Kal-El",true);
+        $perguntas[1][1]=array("Clark Kent",false);
+        $perguntas[1][2]=array("Jor-El",false);
+        $perguntas[1][3]=array("Virgil Hawkins",false);
+        if(is_numeric($alternativa)){
 
-        if ($perguntas[1][$alternativa][1]==true){
-            echo "Acertou";
-        }else{
-            echo "Errou";
+            if ($perguntas[1][$alternativa][1]==true){
+                echo "Acertou";
+            }else{
+                echo "Errou";
+            }
         }
-    }
-        echo"<form method='post' action='index.php'><label>"
+        echo"<form method='post' action='arquivo1.php'><label>"
         . $perguntas[1]["questao"]."</label><br>
-        <input type='radio' name='alternativa' value='0'>
+        <input type='radio' name='alternativa2' value='0'>
         <label>"
         . $perguntas[1][0][0]."</label><br>
-        <input type='radio' name='alternativa' value='1'>
+        <input type='radio' name='alternativa2' value='1'>
         <label>"
         . $perguntas[1][1][0] .
         " </label><br>
-        <input type='radio' name='alternativa' value='2'>
+        <input type='radio' name='alternativa2' value='2'>
         <label>"
         . $perguntas[1][2][0].
         "</label><br>
-        <input type='radio' name='alternativa' value='3'>
+        <input type='radio' name='alternativa2' value='3'>
         <label>"
         . $perguntas[1][3][0].
         "</label><br><br>
@@ -104,20 +138,20 @@ function questao2($alternativa){
             }
         }        
 
-        echo"<form method='post' action='index.php'><label>"
+        echo"<form method='post' action='arquivo1.php'><label>"
         . $perguntas[2]["questao"]."</label><br>
-        <input type='radio' name='alternativa' value='0'>
+        <input type='radio' name='alternativa3' value='0'>
         <label>"
         . $perguntas[2][0][0]."</label><br>
-        <input type='radio' name='alternativa' value='1'>
+        <input type='radio' name='alternativa3' value='1'>
         <label>"
         . $perguntas[2][1][0] .
         " </label><br>
-        <input type='radio' name='alternativa' value='2'>
+        <input type='radio' name='alternativa3' value='2'>
         <label>"
         . $perguntas[2][2][0].
         "</label><br>
-        <input type='radio' name='alternativa' value='3'>
+        <input type='radio' name='alternativa3' value='3'>
         <label>"
         . $perguntas[2][3][0].
         "</label><br><br>
@@ -141,20 +175,20 @@ function questao2($alternativa){
             }
         }        
         
-        echo"<form method='post' action='index.php'><label>"
+        echo"<form method='post' action='arquivo1.php'><label>"
         . $perguntas[3]["questao"]."</label><br>
-        <input type='radio' name='alternativa' value='0'>
+        <input type='radio' name='alternativa4' value='0'>
         <label>"
         . $perguntas[3][0][0]."</label><br>
-        <input type='radio' name='alternativa' value='1'>
+        <input type='radio' name='alternativa4' value='1'>
         <label>"
         . $perguntas[3][1][0] .
         " </label><br>
-        <input type='radio' name='alternativa' value='2'>
+        <input type='radio' name='alternativa4' value='2'>
         <label>"
         . $perguntas[3][2][0].
         "</label><br>
-        <input type='radio' name='alternativa' value='3'>
+        <input type='radio' name='alternativa4' value='3'>
         <label>"
         . $perguntas[3][3][0].
         "</label><br><br>
@@ -179,28 +213,29 @@ function questao2($alternativa){
                 echo "Errou";
             }
         }
-        echo"<form method='post' action='index.php'><label>"
+        echo"<form method='post' action='arquivo1.php'><label>"
         . $perguntas[4]["questao"]."</label><br>
-        <input type='radio' name='alternativa' value='0'>
+        <input type='radio' name='alternativa5' value='0'>
         <label>"
         . $perguntas[4][0][0]."</label><br>
-        <input type='radio' name='alternativa' value='1'>
+        <input type='radio' name='alternativa5' value='1'>
         <label>"
         . $perguntas[4][1][0] .
         " </label><br>
-        <input type='radio' name='alternativa' value='2'>
+        <input type='radio' name='alternativa5' value='2'>
         <label>"
         . $perguntas[4][2][0].
         "</label><br>
-        <input type='radio' name='alternativa' value='3'>
+        <input type='radio' name='alternativa5' value='3'>
         <label>"
         . $perguntas[4][3][0].
         "</label><br><br>
         <input type='submit' name='calcular'>
         </form>";
     }
+
     function questao6($alternativa){
-        $perguntas[5]["questao"]="5. Qual a fraqueza da mulher maravilha?";
+        $perguntas[5]["questao"]="6. Qual a fraqueza da mulher maravilha?";
         $perguntas[5][0]=array("Kryptonita",false);
         $perguntas[5][1]=array("Magia de Ares",true);
         $perguntas[5][2]=array("Cloreto de etila",false);
@@ -213,32 +248,31 @@ function questao2($alternativa){
                 echo "Errou";
             }
         }
-        echo"<form method='post' action='index.php'><label>"
+        echo"<form method='post' action='arquivo1.php'><label>"
         . $perguntas[5]["questao"]."</label><br>
-        <input type='radio' name='alternativa' value='0'>
+        <input type='radio' name='alternativa6' value='0'>
         <label>"
         . $perguntas[5][0][0]."</label><br>
-        <input type='radio' name='alternativa' value='1'>
+        <input type='radio' name='alternativa6' value='1'>
         <label>"
         . $perguntas[5][1][0] .
         " </label><br>
-        <input type='radio' name='alternativa' value='2'>
+        <input type='radio' name='alternativa6' value='2'>
         <label>"
         . $perguntas[5][2][0].
         "</label><br>
-        <input type='radio' name='alternativa' value='3'>
+        <input type='radio' name='alternativa6' value='3'>
         <label>"
         . $perguntas[5][3][0].
         "</label><br><br>
         <input type='submit' name='calcular'>
         </form>";    
     }
-        /*
-        */
+    $questoes=array(questao1($alternativa1),questao2($alternativa2),questao3($alternativa3),questao4($alternativa4),questao5($alternativa5),questao6($alternativa6));
+   
 
-        
-        /* Botões de voltar e avançar */
-        
+
+            
 ?>
         
         <!DOCTYPE html>
@@ -253,9 +287,9 @@ function questao2($alternativa){
 
 <body>
 <div class="container-fluid">
-<?php questao1($alternativa)?><br>
-<input type="button" name="navegacao" value="< volta">
-<input type="button" name="navegacao" value="próxima >">
+<form action="arquivo1.php" method="post"></form>
+<input type="submit" name=navegacao value="Próxima">
+<input type="submit" name=navegacao value="Voltar">
 </div>
 </body>
 </html>
