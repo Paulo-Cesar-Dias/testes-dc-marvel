@@ -31,33 +31,25 @@
         echo"<form method='post' action='index.php'>
         <label>"
         . $perguntas[0]["questao"].
+        "</label><br>        
+        <input type='radio' name='alternativa' value='0'>
+        <label>"
+        . $perguntas[0][0][0].
         "</label><br>
-                
-                <input type='radio' name='alternativa' value='0'>
-                <label>"
-                     . $perguntas[0][0][0].
-                "</label><br>
-        
-                <input type='radio' name='alternativa' value='1'>
-                <label>".
-                      $perguntas[0][1][0] .
-               " </label><br>
-        
-                <input type='radio' name='alternativa' value='2'>
-                <label>".
-                   $perguntas[0][2][0].
-                "</label><br>
-        
-                <input type='radio' name='alternativa' value='3'>
-                <label>".
-                     $perguntas[0][3][0].
-                "</label><br><br>
-        
-                <input type='submit' name='calcular'>
-            </form>";
-
-    
-
+        <input type='radio' name='alternativa' value='1'>
+        <label>"
+        . $perguntas[0][1][0] .
+        " </label><br>
+        <input type='radio' name='alternativa' value='2'>
+        <label>"
+        . $perguntas[0][2][0].
+        "</label><br>
+        <input type='radio' name='alternativa' value='3'>
+        <label>"
+        . $perguntas[0][3][0].
+        "</label><br><br>        
+        <input type='submit' name='calcular'>
+        </form>";
     }
 
 function questao2($alternativa){
