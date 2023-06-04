@@ -1,11 +1,13 @@
 <?php
 
+    
     $alternativa1="";
     $alternativa2="";
     $alternativa3="";
     $alternativa4="";
     $alternativa5="";
     $alternativa6="";
+
 
     if(isset($_POST["calcular"])){
         $botao = $_POST["calcular"];
@@ -35,14 +37,23 @@
         }
         
     }
-    if (isset($_POST["navegacao"])) {
-        # code...
-        $nav=$_POST["navegacao"];
-        if ($nav=="Próxima") {
-            # code...
-            $questoes[1];
-        }
+    if (isset($_POST["questao2"])) {
+        questao2($alternativa2);
     }
+    if (isset($_POST["questao3"])) {
+        questao3($alternativa3);
+    }
+    if (isset($_POST["questao4"])) {
+        questao4($alternativa4);
+    }
+    if (isset($_POST["questao5"])) {
+        questao5($alternativa5);
+    }
+    if (isset($_POST["questao6"])) {
+        questao6($alternativa6);
+    }
+    
+
     
     $perguntas=array();
     
@@ -81,9 +92,13 @@
         <input type='radio' name='alternativa1' value='3'>
         <label>"
         . $perguntas[0][3][0].
-        "</label><br><br>        
-        <input type='submit' name='calcular'>
-        </form>";
+        "</label><br><br>
+        
+        <input type='submit' value='próximo' name='questao2'>
+        
+        </form>"
+        
+        ;
     }
 
     function questao2($alternativa){
@@ -97,11 +112,14 @@
 
             if ($perguntas[1][$alternativa][1]==true){
                 echo "Acertou";
+                
             }else{
                 echo "Errou";
             }
         }
-        echo"<form method='post' action='arquivo1.php'><label>"
+        echo "
+        <p id='questao2'></p>
+        <form method='post' action='arquivo1.php'><label>"
         . $perguntas[1]["questao"]."</label><br>
         <input type='radio' name='alternativa2' value='0'>
         <label>"
@@ -118,7 +136,8 @@
         <label>"
         . $perguntas[1][3][0].
         "</label><br><br>
-        <input type='submit' name='calcular'>
+        <input type='submit' value='próximo' name='questao3'>
+        
         </form>";
 
     } 
@@ -155,7 +174,9 @@
         <label>"
         . $perguntas[2][3][0].
         "</label><br><br>
-        <input type='submit' name='calcular'>
+        
+        <input type='submit' value='próximo' name='questao4'>
+
         </form>";
     }
         
@@ -192,7 +213,8 @@
         <label>"
         . $perguntas[3][3][0].
         "</label><br><br>
-        <input type='submit' name='calcular'>
+        <input type='submit' value='próximo' name='questao5'>
+
         </form>";
 
         
@@ -230,7 +252,8 @@
         <label>"
         . $perguntas[4][3][0].
         "</label><br><br>
-        <input type='submit' name='calcular'>
+        <input type='submit' value='próximo' name='questao6'>
+
         </form>";
     }
 
@@ -268,12 +291,13 @@
         <input type='submit' name='calcular'>
         </form>";    
     }
-    $questoes=array(questao1($alternativa1),questao2($alternativa2),questao3($alternativa3),questao4($alternativa4),questao5($alternativa5),questao6($alternativa6));
-   
-
-
-            
-?>
+  
+    
+    
+    
+    
+    ?>
+        
         
         <!DOCTYPE html>
 <html lang="pt-BR">
@@ -282,14 +306,31 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Planejamento</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<link rel="stylesheet" type="text/css" href="style.css">
 
+</head>
+<style>
+    .pa{
+        color: white;
+    }
+    form{
+        margin-bottom: 100%;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
 <body>
 <div class="container-fluid">
-<form action="arquivo1.php" method="post"></form>
-<input type="submit" name=navegacao value="Próxima">
-<input type="submit" name=navegacao value="Voltar">
+
+<?php 
+questao1($alternativa1);
+questao2($alternativa2);
+questao3($alternativa3);
+    
+?>
+ 
 </div>
 </body>
 </html>
