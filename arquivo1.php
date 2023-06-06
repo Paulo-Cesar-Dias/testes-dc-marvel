@@ -7,51 +7,10 @@
     $alternativa4="";
     $alternativa5="";
     $alternativa6=""; 
-
+    $pontuacao=0;
     $posicao=0;
-    if(isset($_POST['calcular'])){
-        if (isset($_POST['alternativa1'])) {
-            $alternativa1=$_POST['alternativa1']; 
-        }
-        if(isset($_POST['alternativa2'])){
-            $alternativa2=$_POST['alternativa2'];
-        }
-        if(isset($_POST['alternativa3'])){
-            $alternativa3=$_POST['alternativa3'];
-        }
-        if(isset($_POST['alternativa4'])){
-            $alternativa4=$_POST['alternativa4'];
-        }
-        if(isset($_POST['alternativa5'])){
-            $alternativa5=$_POST['alternativa5'];
-        }
-        if(isset($_POST['alternativa6'])){
-            $alternativa5=$_POST['alternativa6'];
-        }
-        if(isset($_POST['alternativa7'])){
-            $alternativa5=$_POST['alternativa7'];
-        }
-        if(isset($_POST['alternativa8'])){
-            $alternativa5=$_POST['alternativa8'];
-        }
-        if(isset($_POST['alternativa9'])){
-            $alternativa5=$_POST['alternativa9'];
-        }
-        if(isset($_POST['alternativa10'])){
-            $alternativa5=$_POST['alternativa10'];
-        }
-        while ($posicao >0) {
-            if ($perguntas[$posicao][3][1] == true) {
-                echo "Acertou";
-            }else{
-                echo "Errou";
-            }
-            $posicao--;
-        }
-
-    }
-
-
+    
+    
     //questoes
     //1
     $perguntas[0]["questao"]="1. Qual o verdadeiro nome do lanterna verde?";
@@ -95,14 +54,14 @@
     $perguntas[5][1]=array("Canário negro e Caçadora",false);
     $perguntas[5][2]=array("Mulher gavião e Caçadora",false);
     $perguntas[5][3]=array("Mulher maravilha e Mulher gavião",true);
-
+    
     //7
     $perguntas[6]["questao"]="7. O Aquaman é Rei da onde?";
     $perguntas[6][0]=array("Mares",true);
     $perguntas[6][1]=array("Terra",false);
     $perguntas[6][2]=array("Neve",false);
     $perguntas[6][3]=array("Ares",false);
-
+    
     //8
     $perguntas[7]["questao"]="8. Sobre a Estelar, qual o seu planeta natal?";
     $perguntas[7][0]=array("Mulher maravilha e Canário negro",false);
@@ -116,7 +75,7 @@
     $perguntas[8][1]=array("Canário negro e Caçadora",false);
     $perguntas[8][2]=array("Mulher gavião e Caçadora",false);
     $perguntas[8][3]=array("Mulher maravilha e Mulher gavião",true);
-
+    
     //10
     $perguntas[9]["questao"]="10. Qual a fraqueza da mulher maravilha?";
     $perguntas[9][0]=array("Kryptonita",false);
@@ -124,15 +83,13 @@
     $perguntas[9][2]=array("Cloreto de etila",false);
     $perguntas[9][3]=array("Emoções",false);
 
-
+    
     
     function questoes() {
         global $perguntas;
         global $posicao;
-        if ($posicao==0){
-            echo "<form action='arquivo1.php' method='post'>";
-        }
-        echo"
+
+        echo "
         <div class='
         questoes'>
         
@@ -165,23 +122,61 @@
         $posicao++;
         if ($posicao==9) {
             # code...
-            echo "<input type='submit' value='Finalizar' name='calcular'>";
-            echo "</form></div>";
+            echo "</div>";
         }
     }
-
-   
-    
-    
-
     
     
     
+    if(isset($_POST['calcular'])){
+        if (isset($_POST['alternativa1'])) {
+            $alternativa1=$_POST['alternativa1'];
+        }
+        
+    
+        if(isset($_POST['alternativa2'])){
+            $alternativa2=$_POST['alternativa2'];
+        }
+        if(isset($_POST['alternativa3'])){
+            $alternativa3=$_POST['alternativa3'];
+        }
+        if(isset($_POST['alternativa4'])){
+            $alternativa4=$_POST['alternativa4'];
+        }
+        if(isset($_POST['alternativa5'])){
+            $alternativa5=$_POST['alternativa5'];
+        }
+        if(isset($_POST['alternativa6'])){
+            $alternativa5=$_POST['alternativa6'];
+        }
+        if(isset($_POST['alternativa7'])){
+            $alternativa5=$_POST['alternativa7'];
+        }
+        if(isset($_POST['alternativa8'])){
+            $alternativa5=$_POST['alternativa8'];
+        }
+        if(isset($_POST['alternativa9'])){
+            $alternativa5=$_POST['alternativa9'];
+        }
+        if(isset($_POST['alternativa10'])){
+            $alternativa5=$_POST['alternativa10'];
+        }
+        if(is_numeric($alternativa1)){
+            
+            if ($perguntas[0][$alternativa1][1]==true) {
+                $pontuacao++;
+                echo $pontuacao;
+            }else {
+                echo "Errou";
+                echo $pontuacao;
+            }
+        }
+    }
     ?>
         
         
         <!DOCTYPE html>
-<html lang="pt-BR">
+        <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -209,21 +204,22 @@
 </style>
 <body>
 <div class="container-fluid">
- <?php 
-    questoes();
-    questoes();
-    questoes();
-    questoes();
-    questoes();
-    questoes();
-    questoes();
-    questoes();
-    questoes();
-    
- ?>
+    <form action="arquivo1.php" method="post">
 
-    
-
+        <?php 
+            questoes();
+            questoes();
+            questoes();
+            questoes();
+            questoes();
+            questoes();
+            questoes();
+            questoes();
+            questoes();
+            
+        ?>
+        <input type='submit' value='Finalizar' name='calcular'>
+    </form>
 
 </div>
 </body>
