@@ -7,17 +7,11 @@
     $alternativa3="";
     $alternativa4="";
     $alternativa5="";
-    $alternativa6="";
+    $alternativa6=""; 
+
     $pontuacao=0;
 
   
-    
-
-
-  
-
-    
-    
     function questao1() {
         
         
@@ -182,30 +176,149 @@
         <a href='#questao6'>Próximo</a>
 
         ";
-    }
+    } 
 
     function questao6(){
-        $perguntas[5]["questao"]="6. Qual a fraqueza da mulher maravilha?";
-        $perguntas[5][0]=array("Kryptonita",false);
-        $perguntas[5][1]=array("Magia de Ares",true);
-        $perguntas[5][2]=array("Cloreto de etila",false);
-        $perguntas[5][3]=array("Emoções",false);
-        echo"<label> <p id='questao6'></p>"
+
+        $perguntas[5]["questao"]="6. Sobre a Estelar, qual o seu planeta natal?";
+        $perguntas[5][0]=array("Mulher maravilha e Canário negro",false);
+        $perguntas[5][1]=array("Canário negro e Caçadora",false);
+        $perguntas[5][2]=array("Mulher gavião e Caçadora",false);
+        $perguntas[5][3]=array("Mulher maravilha e Mulher gavião",true);
+
+        echo"<label><p id='questao6'></p>"
         . $perguntas[5]["questao"]."</label><br>
-        <input type='radio' name='alternativa6' value='0'>
+        <input type='radio' name='alternativa5' value='0'>
         <label>"
         . $perguntas[5][0][0]."</label><br>
-        <input type='radio' name='alternativa6' value='1'>
+        <input type='radio' name='alternativa5' value='1'>
         <label>"
         . $perguntas[5][1][0] .
         " </label><br>
-        <input type='radio' name='alternativa6' value='2'>
+        <input type='radio' name='alternativa5' value='2'>
         <label>"
         . $perguntas[5][2][0].
         "</label><br>
-        <input type='radio' name='alternativa6' value='3'>
+        <input type='radio' name='alternativa5' value='3'>
         <label>"
         . $perguntas[5][3][0].
+        "</label><br><br>
+        <a href='#questao7'>Próximo</a>
+
+        ";
+    } 
+    function questao7(){
+
+        $perguntas[6]["questao"]="7. O Aquaman é Rei da onde?";
+        $perguntas[6][0]=array("Mares",true);
+        $perguntas[6][1]=array("Terra",false);
+        $perguntas[6][2]=array("Neve",false);
+        $perguntas[6][3]=array("Ares",false);
+
+        echo"<label><p id='questao7'></p>"
+        . $perguntas[6]["questao"]."</label><br>
+        <input type='radio' name='alternativa5' value='0'>
+        <label>"
+        . $perguntas[6][0][0]."</label><br>
+        <input type='radio' name='alternativa5' value='1'>
+        <label>"
+        . $perguntas[6][1][0] .
+        " </label><br>
+        <input type='radio' name='alternativa5' value='2'>
+        <label>"
+        . $perguntas[6][2][0].
+        "</label><br>
+        <input type='radio' name='alternativa5' value='3'>
+        <label>"
+        . $perguntas[6][3][0].
+        "</label><br><br>
+        <a href='#questao8'>Próximo</a>
+
+        ";
+    } 
+
+    function questao8(){
+
+        $perguntas[7]["questao"]="8. Sobre a Estelar, qual o seu planeta natal?";
+        $perguntas[7][0]=array("Mulher maravilha e Canário negro",false);
+        $perguntas[7][1]=array("Canário negro e Caçadora",false);
+        $perguntas[7][2]=array("Mulher gavião e Caçadora",false);
+        $perguntas[7][3]=array("Mulher maravilha e Mulher gavião",true);
+
+        echo"<label><p id='questao8'></p>"
+        . $perguntas[7]["questao"]."</label><br>
+        <input type='radio' name='alternativa5' value='0'>
+        <label>"
+        . $perguntas[7][0][0]."</label><br>
+        <input type='radio' name='alternativa5' value='1'>
+        <label>"
+        . $perguntas[7][1][0] .
+        " </label><br>
+        <input type='radio' name='alternativa5' value='2'>
+        <label>"
+        . $perguntas[7][2][0].
+        "</label><br>
+        <input type='radio' name='alternativa5' value='3'>
+        <label>"
+        . $perguntas[7][3][0].
+        "</label><br><br>
+        <a href='#questao9'>Próximo</a>
+
+        ";
+    } 
+
+    function questao9(){
+
+        $perguntas[8]["questao"]="9. Sobre a Estelar, qual o seu planeta natal?";
+        $perguntas[8][0]=array("Mulher maravilha e Canário negro",false);
+        $perguntas[8][1]=array("Canário negro e Caçadora",false);
+        $perguntas[8][2]=array("Mulher gavião e Caçadora",false);
+        $perguntas[8][3]=array("Mulher maravilha e Mulher gavião",true);
+
+        echo"<label><p id='questao9'></p>"
+        . $perguntas[8]["questao"]."</label><br>
+        <input type='radio' name='alternativa5' value='0'>
+        <label>"
+        . $perguntas[8][0][0]."</label><br>
+        <input type='radio' name='alternativa5' value='1'>
+        <label>"
+        . $perguntas[8][1][0] .
+        " </label><br>
+        <input type='radio' name='alternativa5' value='2'>
+        <label>"
+        . $perguntas[8][2][0].
+        "</label><br>
+        <input type='radio' name='alternativa5' value='3'>
+        <label>"
+        . $perguntas[8][3][0].
+        "</label><br><br>
+        <a href='#questao10'>Próximo</a>
+
+        ";
+    }
+
+    function questao10(){
+        $perguntas[9]["questao"]="10. Qual a fraqueza da mulher maravilha?";
+        $perguntas[9][0]=array("Kryptonita",false);
+        $perguntas[9][1]=array("Magia de Ares",true);
+        $perguntas[9][2]=array("Cloreto de etila",false);
+        $perguntas[9][3]=array("Emoções",false);
+        echo"<label> <p id='questao6'></p>"
+        . $perguntas[9]["questao"]."</label><br>
+        <input type='radio' name='alternativa6' value='0'>
+        <label>"
+        . $perguntas[9][0][0]."</label><br>
+        <input type='radio' name='alternativa6' value='1'>
+        <label>"
+        . $perguntas[9][1][0] .
+        " </label><br>
+        <input type='radio' name='alternativa6' value='2'>
+        <label>"
+        . $perguntas[9][2][0].
+        "</label><br>
+        <input type='radio' name='alternativa6' value='3'>
+        <label>"
+        . $perguntas[9][3][0].
         "</label><br><br>
         <a href='#questao1'>Recomeçar</a>
         <input type='submit' value='finalizar' name='calcular'>
@@ -219,7 +332,11 @@
     questao3();
     questao4();
     questao5();
-    questao6();
+    questao6(); 
+    questao7(); 
+    questao8(); 
+    questao9(); 
+    questao10();
     if(isset($_POST["calcular"])){
         $botao = $_POST["calcular"];
         if(isset($_POST["alternativa1"])){
