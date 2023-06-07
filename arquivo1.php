@@ -1,21 +1,21 @@
 <?php
 
-    $calculo = "";
-
-    $alternativa1 = "";
-    $alternativa2 = "";
-    $alternativa3 = "";
-    $alternativa4 = "";
-    $alternativa5 = "";
-    $alternativa6 = "";
-    $alternativa7 = "";
-    $alternativa8 = "";
-    $alternativa9 = "";
-    $alternativa10 = "";
-    
-    $posicao = 0;
-    $ponto = 0;
-
+    //variáveis
+        $calculo = "";
+        $jaexe=false;
+        $alternativa1 = "";
+        $alternativa2 = "";
+        $alternativa3 = "";
+        $alternativa4 = "";
+        $alternativa5 = "";
+        $alternativa6 = "";
+        $alternativa7 = "";
+        $alternativa8 = "";
+        $alternativa9 = "";
+        $alternativa10 = "";
+        $posicao = 0;
+        $ponto = 0;
+        
     $perguntas = array();
 
         //1
@@ -131,8 +131,6 @@
             $alternativa10 = $_POST["alternativa10"];
         }
 
-
-        //Verificação das pontuações
         if(is_numeric($alternativa1)){
             if($perguntas[0][$alternativa1][1] == true){
                 $ponto++;
@@ -193,21 +191,28 @@
             }
         }
 
-        echo "acertou " . $ponto; 
-    }
-    //função da pergunta. Boa sorte pra entender :)
-    function perguntas(){
+        echo"<div>
+
+                <p id='pontuacao'><br>
+                Acertou
+                " . $ponto ." de 10</p>
+                <a href='#questao1'> Recomeçar </a>
         
+            </div> 
+            "; 
+            $jaexe=true;
+        }
+        //função da pergunta. Boa sorte pra entender :)
+        function perguntas(){
         global $perguntas;
         global $posicao;
+        global $jaexe;
         
-        echo "
-        
-        <div class='questao".$posicao+1 ."'>
-
-            <p id='questao". $posicao+1 ."'></p><br>";
-            if ($posicao>0){
-                echo "<a href='#questao". $posicao ."' >Voltar</a><br><br>";
+        echo " 
+        <div class='questao".$posicao+1 ."'>;
+        <p id='questao". $posicao+1 ."'></p><br>";
+        if ($posicao>0){
+            echo "<a href='#questao". $posicao ."' >Voltar</a><br><br>";
             }
             echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
             
@@ -228,12 +233,15 @@
                 echo "<input type='submit' name='Calcular' value='Finalizar'>";
             }else{
             echo "<a href='#questao". $posicao+2 ."' >Próximo</a>";
+            if ($jaexe==true) {
+                echo "<br><br><a href='#pontuacao'>Desistir e voltar para pontuação</a><br>";
+            }
 
         }
         echo "</div>";
         $posicao++;
     }
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -242,7 +250,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testando...</title>
+    <title>Rascunho: backend</title>
 </head>
 <style>
 
@@ -254,18 +262,13 @@
    .questao2{
 
    }
-
-
-
     /* Organização da página */
     div{
         margin-bottom: 100%;
     }
-
     html {
         scroll-behavior: smooth;
         overflow: hidden;
-        
     }
 </style>
 <body>
@@ -284,7 +287,6 @@
             perguntas();
             perguntas();
         ?>
-        
        
     </form>
 </div>
