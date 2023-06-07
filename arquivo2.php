@@ -12,7 +12,7 @@
     $alternativa8 = "";
     $alternativa9 = "";
     $alternativa10 = "";
-
+    
     $posicao = 0;
     $ponto = 0;
 
@@ -195,31 +195,39 @@
 
         echo "acertou " . $ponto; 
     }
-
+    //função da pergunta. Boa sorte pra entender :)
     function perguntas(){
 
         global $perguntas;
         global $posicao;
 
         echo "
-        <label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
 
-        <input type='radio' name='alternativa" . $posicao+1 . "' value='0'>
-        <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
-
-        <input type='radio' name='alternativa" . $posicao+1 . "' value='1'>
-        <label for=''>" . $perguntas[$posicao][1][0] . "</label><br>
-        
-        <input type='radio' name='alternativa" . $posicao+1 . "' value='2'>
-        <label for=''>" . $perguntas[$posicao][2][0] . "</label><br>
-
-        <input type='radio' name='alternativa" . $posicao+1 . "' value='3'>
-        <label for=''>" . $perguntas[$posicao][3][0] . "</label><br><br>";
-
+        <div class='questao".$posicao+1 ."'>
+            <p id='questao". $posicao+1 ."'></p><br>
+            <label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
+            
+            <input type='radio' name='alternativa" . $posicao+1 . "' value='0'>
+            <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
+            
+            <input type='radio' name='alternativa" . $posicao+1 . "' value='1'>
+            <label for=''>" . $perguntas[$posicao][1][0] . "</label><br>
+            
+            <input type='radio' name='alternativa" . $posicao+1 . "' value='2'>
+            <label for=''>" . $perguntas[$posicao][2][0] . "</label><br>
+            
+            <input type='radio' name='alternativa" . $posicao+1 . "' value='3'>
+            <label for=''>" . $perguntas[$posicao][3][0] . "</label><br><br>
+            
+            <a href='#questao". $posicao+2 ."' >Próximo</a>
+        ";
+        if ($posicao==9){
+            echo "<input type='submit' name='Calcular'>";
+        }
+        echo "</div>";
         $posicao++;
-
     }
-     
+    
 ?>
 
 <!DOCTYPE html>
@@ -230,7 +238,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testando...</title>
 </head>
+<style>
+
+
+   /* CSS das questões */
+   .questao1{
+       background-color:black;
+   }
+
+
+    /* Organização da página */
+    div{
+        margin-bottom: 1000px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+</style>
 <body>
+<div class="container-fluid">
     <form action="arquivo2.php" method="post">
 
         <?php 
@@ -246,7 +274,8 @@
             perguntas();
         ?>
         
-        <input type="submit" name="Calcular">
+       
     </form>
+</div>
 </body>
 </html>

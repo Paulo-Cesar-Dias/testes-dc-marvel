@@ -10,6 +10,7 @@
     $pontuacao=0;
     $posicao=0;
     
+    
     //questoes
     //1
     $perguntas[0]["questao"]="1. Qual o verdadeiro nome do lanterna verde?";
@@ -89,8 +90,7 @@
         global $posicao;
 
         echo "
-        <div class='
-        questoes'>
+        <div class='questoes'>
         
         <p id='questao".$posicao+1 . "'></p>
         <label>"
@@ -116,6 +116,7 @@
         
         <a href='#questao".$posicao+2 ."'>Próximo</a>
         $posicao
+        </div>
         "
         ;
         $posicao++;
@@ -181,7 +182,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Planejamento</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+
 
 </head>
 <style>
