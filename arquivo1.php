@@ -10,7 +10,6 @@
     $pontuacao=0;
     $posicao=0;
     
-    
     //questoes
     //1
     $perguntas[0]["questao"]="1. Qual o verdadeiro nome do lanterna verde?";
