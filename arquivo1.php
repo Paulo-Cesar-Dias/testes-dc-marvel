@@ -197,15 +197,19 @@
     }
     //função da pergunta. Boa sorte pra entender :)
     function perguntas(){
-
+        
         global $perguntas;
         global $posicao;
-
+        
         echo "
-
+        
         <div class='questao".$posicao+1 ."'>
-            <p id='questao". $posicao+1 ."'></p><br>
-            <label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
+
+            <p id='questao". $posicao+1 ."'></p><br>";
+            if ($posicao>0){
+                echo "<a href='#questao". $posicao ."' >Voltar</a><br><br>";
+            }
+            echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
             
             <input type='radio' name='alternativa" . $posicao+1 . "' value='0'>
             <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
@@ -219,10 +223,12 @@
             <input type='radio' name='alternativa" . $posicao+1 . "' value='3'>
             <label for=''>" . $perguntas[$posicao][3][0] . "</label><br><br>
             
-            <a href='#questao". $posicao+2 ."' >Próximo</a>
-        ";
-        if ($posicao==9){
-            echo "<input type='submit' name='Calcular'>";
+            ";
+            if ($posicao==9){
+                echo "<input type='submit' name='Calcular' value='Finalizar'>";
+            }else{
+            echo "<a href='#questao". $posicao+2 ."' >Próximo</a>";
+
         }
         echo "</div>";
         $posicao++;
@@ -243,23 +249,28 @@
 
    /* CSS das questões */
    .questao1{
-       background-color:black;
+       
    }
+   .questao2{
+
+   }
+
 
 
     /* Organização da página */
     div{
-        margin-bottom: 1000px;
+        margin-bottom: 100%;
     }
 
     html {
         scroll-behavior: smooth;
         overflow: hidden;
+        
     }
 </style>
 <body>
 <div class="container-fluid">
-    <form action="arquivo2.php" method="post">
+    <form action="arquivo1.php" method="post">
 
         <?php 
             perguntas();
