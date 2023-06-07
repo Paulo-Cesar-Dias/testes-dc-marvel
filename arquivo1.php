@@ -205,7 +205,7 @@
 <body>
 <div class="container-fluid">
     <form action="arquivo1.php" method="post">
-
+<!--teste-->
         <?php 
             questoes();
             questoes();
