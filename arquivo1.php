@@ -217,15 +217,12 @@
                 <div class='questao".$posicao."'>
             <input type='text' name='mais_homi'>
             <a href='#questao1'>Começar</a>
-                
-
-
-
-
             </div>";
             }
+
             echo " 
-            <p id='questao". $posicao+1 ."'></p>
+            <p id='questao". $posicao+1 ."'> </p>
+           <br> 
             <div class='questao".$posicao+1 ."'><br>";
             if ($posicao>0){
                 echo "<a href='#questao". $posicao ."' >Voltar</a><br>";

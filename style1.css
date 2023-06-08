@@ -5,6 +5,9 @@ body{
 
 .questao1{
     
+    
+    
+    margin-top: 60px;
     color: #ffff;
     flex-direction: column;
     align-items: center;
@@ -155,9 +158,13 @@ a {
     /* Organização da página */
     div{
         
-        margin-top: 300px;
+        margin-bottom: 100%;
     }
+    .espacamento{
+        margin-top:1100px;
+    }
+    
     html {
         scroll-behavior: inherit;
-        overflow: hidden;
+        
     }
