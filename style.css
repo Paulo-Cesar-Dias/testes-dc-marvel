@@ -12,7 +12,6 @@
             
         }
         .login{
-          margin-top: 130px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -21,6 +20,8 @@
             width: 355px;
             height: 420px;
             padding: 35px;
+            margin-left: 35%;
+            margin-right: 45%;
             
         }
         .login form{
@@ -60,6 +61,7 @@
             
         }
         h1{
+            
             display: block;
             background-color: #e20c0c;
             font-size: 28px;
@@ -78,7 +80,7 @@
 	background-color:#0772EB; 
 	color:#fff; 
 	font-size:0.875em; 
-    margin-top: 140px;
+    margin-top: 120px;
 }
 .main_footer .content { float:left; width:90%; margin:0 5%; padding: 1em 0; }
 .container { float:left; width:100%; }
