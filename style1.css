@@ -4,7 +4,7 @@ body{
 
 
 .questao1{
-    margin-top: 60px;
+    
     color: #ffff;
     flex-direction: column;
     align-items: center;
@@ -154,7 +154,8 @@ a {
 }
     /* Organização da página */
     div{
-        margin-bottom: 100%;
+        
+        margin-top: 300px;
     }
     html {
         scroll-behavior: inherit;

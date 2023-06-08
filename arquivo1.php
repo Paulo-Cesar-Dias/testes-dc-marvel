@@ -225,8 +225,8 @@
             </div>";
             }
             echo " 
-            <div class='questao".$posicao+1 ."'>
-            <p id='questao". $posicao+1 ."'></p><br>";
+            <p id='questao". $posicao+1 ."'></p>
+            <div class='questao".$posicao+1 ."'>";
             if ($posicao>0){
                 echo "<a href='#questao". $posicao ."' >Voltar</a><br>";
                 }
