@@ -82,11 +82,11 @@
         $perguntas[8][3]=array("Mary Jane",false);
         
         //10
-        $perguntas[9]["questao"]="10. Qual a fraqueza da mulher maravilha?";
-        $perguntas[9][0]=array("Kryptonita",false);
-        $perguntas[9][1]=array("Emoções",false);
-        $perguntas[9][2]=array("Cloreto de etila",false);
-        $perguntas[9][3]=array("Magia de Ares",true);
+        $perguntas[9]["questao"]="10. Os nomes respectivos reais dos personagens Capitão América, Hulk e Homem de Ferro são:";
+        $perguntas[9][0]=array("Tony Stark, Steve Rogers e Bruce Wayne",false);
+        $perguntas[9][1]=array("Steve Rogers, Tony Stark e Bruce Banner",false);
+        $perguntas[9][2]=array("Clark Kent, Bruce Banner e Tony Stark",false);
+        $perguntas[9][3]=array("Steve Rogers, Bruce Banner e Tony Stark",true);
     
     if(isset($_POST["Calcular"])){
         $calculo = $_POST["Calcular"];

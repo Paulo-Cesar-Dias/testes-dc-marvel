@@ -12,7 +12,7 @@ body{
     background-repeat: no-repeat;
     font-size: 35px;
     border-radius: 115px;
-    width: 1255px;
+    width: 1281px;
     height: 470px;
     padding: 35px; 
 }
@@ -39,7 +39,7 @@ a {
     background-repeat: no-repeat;
     font-size: 35px;
     border-radius: 115px;
-    width: 1255px;
+    width: 1281px;
     height: 470px;
     padding: 35px; 
 }
@@ -48,11 +48,11 @@ a {
     color: #ffff;
     flex-direction: column;
     align-items: center;
-    background-image: url(img/lg.webp);
+    background-image: url(img/lj.jpg);
     background-repeat: no-repeat;
     font-size: 35px;
     border-radius: 115px;
-    width: 1255px;
+    width: 1281px;
     height: 470px;
     padding: 35px; 
 }
@@ -61,11 +61,11 @@ a {
     color: #ffff;
     flex-direction: column;
     align-items: center;
-    background-image: url(img/lvvv.jpg);
+    background-image: url(img/btm.jpg);
     background-repeat: no-repeat;
     font-size: 35px;
     border-radius: 115px;
-    width: 1255px;
+    width: 1281px;
     height: 470px;
     padding: 35px; 
 }
@@ -74,11 +74,11 @@ a {
     color: #ffff;
     flex-direction: column;
     align-items: center;
-    background-image: url(img/lvvv.jpg);
+    background-image: url(img/sf.jpg);
     background-repeat: no-repeat;
     font-size: 35px;
     border-radius: 115px;
-    width: 1255px;
+    width: 1281px;
     height: 470px;
     padding: 35px; 
 }
@@ -87,11 +87,12 @@ a {
     color: #ffff;
     flex-direction: column;
     align-items: center;
-    background-image: url(img/lvvv.jpg);
+    background-image: url(img/tta.png);
+    background-size: 1355px;
     background-repeat: no-repeat;
     font-size: 35px;
     border-radius: 115px;
-    width: 1255px;
+    width: 1281px;
     height: 470px;
     padding: 35px; 
 }
@@ -104,7 +105,7 @@ a {
     background-repeat: no-repeat;
     font-size: 35px;
     border-radius: 115px;
-    width: 1255px;
+    width: 1281px;
     height: 470px;
     padding: 35px; 
 }
@@ -117,7 +118,7 @@ a {
     background-repeat: no-repeat;
     font-size: 35px;
     border-radius: 115px;
-    width: 1255px;
+    width: 1281px;
     height: 470px;
     padding: 35px; 
 }
@@ -131,7 +132,7 @@ a {
     background-repeat: no-repeat;
     font-size: 35px;
     border-radius: 115px;
-    width: 1255px;
+    width: 1281px;
     height: 470px;
     padding: 35px; 
 }
@@ -140,11 +141,12 @@ a {
     color: #ffff;
     flex-direction: column;
     align-items: center;
-    background-image: url(img/lvvv.jpg);
+    background-image: url(img/vg.jpg);
+    background-size: 1355px;
     background-repeat: no-repeat;
     font-size: 35px;
     border-radius: 115px;
-    width: 1255px;
+    width: 1281px;
     height: 470px;
     padding: 35px; 
 }
