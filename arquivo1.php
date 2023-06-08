@@ -209,7 +209,7 @@
             global $jaexe;
             
             echo " 
-            <div class='questao".$posicao+1 ."'>;
+            <div class='questao".$posicao+1 ."'>
             <p id='questao". $posicao+1 ."'></p><br>";
             if ($posicao>0){
                 echo "<a href='#questao". $posicao ."' >Voltar</a><br><br>";
