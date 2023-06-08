@@ -35,16 +35,16 @@
         //3
         $perguntas[2]["questao"]="3. Qual o primeiro vilão enfrentado pela liga da justiça?";
         $perguntas[2][0]=array("Prometheus, o gênio criminal",false);
-        $perguntas[2][1]=array("Amazo, android imitador de poderes",false);
+        $perguntas[2][1]=array("Starro, a estrela alienígena gigante",true);
         $perguntas[2][2]=array("Darkseid",false);
-        $perguntas[2][3]=array("Starro, a estrela alienígena gigante",true);
+        $perguntas[2][3]=array("Amazo, android imitador de poderes",false);
 
         //4
         $perguntas[3]["questao"]="4. Qual a comida preferida do Batman?";
         $perguntas[3][0]=array("Bolos",false);
         $perguntas[3][1]=array("Bife",false);
-        $perguntas[3][2]=array("Sorvete",false);
-        $perguntas[3][3]=array("Nachos",true);
+        $perguntas[3][2]=array("Nachos",true);
+        $perguntas[3][3]=array("Sorvete",false);
 
         //5
         $perguntas[4]["questao"]="5. Sobre a Estelar, qual o seu planeta natal?";
@@ -57,15 +57,15 @@
         $perguntas[5]["questao"]="6. Qual o nome do primeiro intérprete do Homem-Aranha no MCU?";
         $perguntas[5][0]=array("Nicholas Hammond",false);
         $perguntas[5][1]=array("Tobey  Maguire",false);
-        $perguntas[5][2]=array("Andrew Garfield",false);
-        $perguntas[5][3]=array("Tom Holland",true);
+        $perguntas[5][2]=array("Tom Holland",true);
+        $perguntas[5][3]=array("Andrew Garfield",false);
     
         //7
         $perguntas[6]["questao"]="7. Quantas jóias do infinito podem ser anexadas na manopla do Thanos?";
         $perguntas[6][0]=array("7 jóias",false);
-        $perguntas[6][1]=array("5 jóias",false);
+        $perguntas[6][1]=array("6 jóias",true);
         $perguntas[6][2]=array("4 jóias",false);
-        $perguntas[6][3]=array("6 jóias",true);
+        $perguntas[6][3]=array("5 jóias",false);
         
         //8
         $perguntas[7]["questao"]="8. Qual o verdadeiro nome do Pantera Negra?";
@@ -76,10 +76,10 @@
             
         //9
         $perguntas[8]["questao"]="9. Qual o primeiro par romântico do homem-aranha nas HQ?";
-        $perguntas[8][0]=array("Mary Jane",false);
-        $perguntas[8][1]=array("MJ",false);
+        $perguntas[8][0]=array("Gwen Stacy",true);
+        $perguntas[8][1]=array("Michelle Jones",false);
         $perguntas[8][2]=array("Gata Negra",false);
-        $perguntas[8][3]=array("Gwen Stacy",true);
+        $perguntas[8][3]=array("Mary Jane",false);
         
         //10
         $perguntas[9]["questao"]="10. Qual a fraqueza da mulher maravilha?";
@@ -212,7 +212,7 @@
             <div class='questao".$posicao+1 ."'>
             <p id='questao". $posicao+1 ."'></p><br>";
             if ($posicao>0){
-                echo "<a href='#questao". $posicao ."' >Voltar</a><br><br>";
+                echo "<a href='#questao". $posicao ."' >Voltar</a><br>";
                 }
                 echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
                 
@@ -250,26 +250,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rascunho: backend</title>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style1.css">
 </head>
 <style>
-
-
    /* CSS das questões */
-   .questao1{
-       
-   }
-   .questao2{
-
-   }
-    /* Organização da página */
-    div{
-        margin-bottom: 100%;
-    }
-    html {
-        scroll-behavior: smooth;
-        overflow: hidden;
-    }
 </style>
 <body>
 <div class="container-fluid">
@@ -290,5 +275,6 @@
        
     </form>
 </div>
+    </div>
 </body>
 </html>
