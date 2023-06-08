@@ -226,7 +226,7 @@
             }
             echo " 
             <p id='questao". $posicao+1 ."'></p>
-            <div class='questao".$posicao+1 ."'>";
+            <div class='questao".$posicao+1 ."'><br>";
             if ($posicao>0){
                 echo "<a href='#questao". $posicao ."' >Voltar</a><br>";
                 }
@@ -242,7 +242,7 @@
                 <label for=''>" . $perguntas[$posicao][2][0] . "</label><br>
                 
                 <input type='radio' name='alternativa" . $posicao+1 . "' value='3'>
-                <label for=''>" . $perguntas[$posicao][3][0] . "</label><br><br>
+                <label for=''>" . $perguntas[$posicao][3][0] . "</label><br>
                 
                 ";
                 if ($posicao==9){
