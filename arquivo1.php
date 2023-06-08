@@ -15,6 +15,7 @@
         $alternativa10 = "";
         $posicao = 0;
         $ponto = 0;
+        $mais_homi="";
         
     $perguntas = array();
 
@@ -130,6 +131,9 @@
         if(isset($_POST["alternativa10"])){
             $alternativa10 = $_POST["alternativa10"];
         }
+        if(isset($_POST["mais_homi"])){
+            $mais_homi= $_POST["mais_homi"];
+        }
 
         if(is_numeric($alternativa1)){
             if($perguntas[0][$alternativa1][1] == true){
@@ -194,9 +198,9 @@
         echo"<div>
 
                 <p id='pontuacao'><br>
-                Acertou
+                Parabens ".$mais_homi."!!! Você acertou
                 " . $ponto ." de 10</p>
-                <a href='#questao1'> Recomeçar </a>
+                <a href='#questao0'> Recomeçar </a>
         
             </div> 
             "; 
@@ -208,6 +212,18 @@
             global $posicao;
             global $jaexe;
             
+            if($posicao==0){
+                echo " 
+                <div class='questao".$posicao."'>
+            <input type='text' name='mais_homi'>
+            <a href='#questao1'>Começar</a>
+                
+
+
+
+
+            </div>";
+            }
             echo " 
             <div class='questao".$posicao+1 ."'>
             <p id='questao". $posicao+1 ."'></p><br>";
@@ -272,9 +288,8 @@
             perguntas();
             perguntas();
         ?>
-       
     </form>
 </div>
-    </div>
+  
 </body>
 </html>
