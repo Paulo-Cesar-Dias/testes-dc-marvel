@@ -217,7 +217,8 @@
     <center>    <section class='area-teste'>
         <div class='teste'>
             <div class='questao".$posicao."'>
-        <center>  <h1>INSIRA SEU NICK</h1>  <input type='text' name='mais_homi'>
+        <center>  <h1>INSIRA SEU NICK</h1>  <input type='text' placeholder= Nickname autocomplete= 'off'
+        name='mais_homi'>
     <a href='#questao1'>Começar</a> </center>
        </div>
             </div>
