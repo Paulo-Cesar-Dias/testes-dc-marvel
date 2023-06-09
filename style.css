@@ -2,7 +2,8 @@
     body{
         background-image: url(img/px.jpg);
     }
-    .area{
+    .area-login{
+            margin-top: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,8 +21,7 @@
             width: 355px;
             height: 420px;
             padding: 35px;
-            margin-left: 35%;
-            margin-right: 45%;
+            
             
             
         }
@@ -46,11 +46,7 @@
             height: auto;
            
         }
-        .login::placeholder{
-            color: black;
-            font-size: 14px;
-            
-        }
+        
         form [type="submit"]{
             display: block;
             background-color: #0772EB;
@@ -62,7 +58,6 @@
             
         }
         h1{
-            
             display: block;
             background-color: #e20c0c;
             font-size: 28px;
@@ -81,7 +76,7 @@
 	background-color:#0772EB; 
 	color:#fff; 
 	font-size:0.875em; 
-    margin-top: 120px;
+    margin-top: 80px;
 }
 .main_footer .content { float:left; width:90%; margin:0 5%; padding: 1em 0; }
 .container { float:left; width:100%; }

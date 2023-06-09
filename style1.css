@@ -2,11 +2,60 @@ body{
    background-image: url(img/px.jpg);
 }
 
+form [type="submit"]{
+    display: block;
+    background-color: red;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    color: #ffff;
+    cursor: pointer;
+    margin-top: 40px;
+    
+   
+}
 
+h1{
+    margin-top: 110px;
+    display: block;
+    background-color: #b6b30f;
+    width: 300px;
+    font-size: 28px;
+    color: #ffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.teste{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(img/dcc.jpg);
+    border-radius: 115px;
+    width: 755px;
+    height: 420px;
+    padding: 85px;
+    
+    
+}
+form [type="text"]{
+    align-items: center;
+    width: 250px;
+    padding: 5px;
+    margin-top:20px;
+    
+}
+a[href="#questao1"]{
+   
+    
+}
 .questao1{
     
     
-    
+
     margin-top: 60px;
     color: #ffff;
     flex-direction: column;
@@ -18,8 +67,10 @@ body{
     width: 1281px;
     height: 470px;
     padding: 35px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 a {
+    margin-top: 30px;
     display: block;    
     font-size: 28px;
     text-transform: uppercase;
@@ -30,6 +81,7 @@ a {
     width: 1255px;
     height: 30px;
     border-radius: 100px;
+    
             
 }
 .questao2{
@@ -45,19 +97,21 @@ a {
     width: 1281px;
     height: 470px;
     padding: 35px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .questao3{
     margin-top: 60px;
     color: #ffff;
     flex-direction: column;
     align-items: center;
-    background-image: url(img/lj.jpg);
+    background-image: url(img/cg.jpg);
     background-repeat: no-repeat;
     font-size: 35px;
     border-radius: 115px;
     width: 1281px;
     height: 470px;
     padding: 35px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .questao4{
     margin-top: 60px;
@@ -71,6 +125,7 @@ a {
     width: 1281px;
     height: 470px;
     padding: 35px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .questao5{
     margin-top: 60px;
@@ -84,6 +139,7 @@ a {
     width: 1281px;
     height: 470px;
     padding: 35px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .questao6{
     margin-top: 60px;
@@ -97,7 +153,8 @@ a {
     border-radius: 115px;
     width: 1281px;
     height: 470px;
-    padding: 35px; 
+    padding: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 .questao7{
     margin-top: 60px;
@@ -111,7 +168,8 @@ a {
     border-radius: 115px;
     width: 1281px;
     height: 470px;
-    padding: 35px; 
+    padding: 35px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 .questao8{
     margin-top: 60px;
@@ -126,6 +184,7 @@ a {
     width: 1281px;
     height: 470px;
     padding: 35px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .questao9{
     margin-top: 60px;
@@ -140,13 +199,14 @@ a {
     width: 1281px;
     height: 470px;
     padding: 35px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .questao10{
     margin-top: 60px;
     color: #ffff;
     flex-direction: column;
     align-items: center;
-    background-image: url(img/vg.jpg);
+    background-image: url(img/vgg.jpg);
     background-size: 1355px;
     background-repeat: no-repeat;
     font-size: 35px;
@@ -154,6 +214,7 @@ a {
     width: 1281px;
     height: 470px;
     padding: 35px; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
     /* Organização da página */
     div{
@@ -166,5 +227,6 @@ a {
     
     html {
         scroll-behavior: inherit;
+        overflow: hidden;
         
     }

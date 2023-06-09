@@ -214,10 +214,14 @@
             
             if($posicao==0){
                 echo " 
-                <div class='questao".$posicao."'>
-            <input type='text' name='mais_homi'>
-            <a href='#questao1'>Começar</a>
-            </div>";
+    <center>    <section class='area-teste'>
+        <div class='teste'>
+            <div class='questao".$posicao."'>
+        <center>  <h1>INSIRA SEU NICK</h1>  <input type='text' name='mais_homi'>
+    <a href='#questao1'>Começar</a> </center>
+       </div>
+            </div>
+                </section>  </center>";
             }
 
             echo " 
