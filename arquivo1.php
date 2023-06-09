@@ -195,14 +195,14 @@
             }
         }
 
-        echo"<div>
+        echo"<center><div class='resultado'>
 
-                <p id='pontuacao'><br>
+                <center><p id='pontuacao'><br>
                 Parabens ".$mais_homi."!!! Você acertou
-                " . $ponto ." de 10</p>
+                " . $ponto ." de 10</p></center>
                 <a href='#questao0'> Recomeçar </a>
         
-            </div> 
+            </div></center> 
             "; 
             $jaexe=true;
         }
