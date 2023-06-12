@@ -140,6 +140,7 @@
             }
             $posi_alternativa++;
         }
+
         for ($i=0; $i < 10; $i++) { 
             pontuacao();
         }
@@ -149,16 +150,19 @@
                 <center><p id='pontuacao'><br>
                 Parabens ".$mais_homi."!!! Você acertou
                 " . $ponto ." de 10</p></center>
-                <a href='#questao1'> Recomeçar </a>
+                <a href='#questao1'> Recomeçar </a>";
+
+                for($i=0; $i<10; $i++){
+                    exibicao();
+                }
         
-            </div></center> 
-            "; 
+            echo "</div></center>";
+            
             $jaexe=true;
+
         }
+
         //função da pergunta. Boa sorte pra entender :)
-
-    
-
 
         function perguntas(){
             global $perguntas;
@@ -203,7 +207,7 @@
                 if ($posicao==9){
                     echo "<input type='submit' name='Calcular' value='Finalizar'>";
                 }else{
-                echo "<a href='#questao". $posicao+2 ."' >Próximo</a>";
+                    echo "<a href='#questao". $posicao+2 ."' >Próximo</a>";
                 if ($jaexe==true) {
                     echo "<br><br><a href='#pontuacao'>Desistir e voltar para pontuação</a><br>";
                 }
@@ -211,6 +215,20 @@
             }
             echo "</div> </center>";
             $posicao++;
+        }
+
+        function exibicao(){
+            global $alternativa;
+            global $posi_alternativa;
+            global $perguntas;
+
+            if($perguntas[$posi_alternativa][$alternativa[$posi_alternativa]][1] == true){
+                echo $perguntas[$posi_alternativa]["questao"] . "|| Acertou" ;
+            }else{
+                echo $perguntas[$posi_alternativa]["questao"] . "|| Errou <br>";
+            }
+
+            $posi_alternativa++;
         }
 
 ?>
