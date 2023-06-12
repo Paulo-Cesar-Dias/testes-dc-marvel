@@ -4,7 +4,7 @@ body{
 
 form [type="submit"]{
     display: block;
-    background-color: red;
+    background-color: #0772EB;
     font-size: 28px;
     text-transform: uppercase;
     font-weight: bold;
@@ -20,7 +20,7 @@ h1{
     margin-top: 110px;
     display: block;
     background-color: red;
-    width: 370px;
+    width: 390px;
     font-size: 28px;
     color: #ffff;
     text-transform: uppercase;
@@ -66,7 +66,7 @@ form [type="text"]{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 a {
-    background-color: #0772EB;
+    background-color: red;
     color: #ffff;
     text-decoration: none;
     display: inline-block;
@@ -233,9 +233,9 @@ a {
     color: #ffff;
     
 }
-a[href="#questao0"]{
+a[href="#questao1"]{
     background-color: red;
-    width: 150px;
+    width: 90px;
     left:50%;
     top:50%;
     text-align: center;
