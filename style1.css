@@ -51,7 +51,7 @@ form [type="text"]{
 .questao1{
     
     
-
+    text-align: left;
     margin-top: 60px;
     color: #ffff;
     flex-direction: column;
@@ -91,7 +91,7 @@ a {
     flex-direction: column;
     align-items: center;
     background-image: url(img/super.jpg);
-    
+    text-align: left;
     background-repeat: no-repeat;
     font-size: 35px;
     border-radius: 115px;
@@ -101,6 +101,7 @@ a {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .questao3{
+    text-align: left;
     margin-top: 60px;
     color: #ffff;
     flex-direction: column;
@@ -115,6 +116,7 @@ a {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .questao4{
+    text-align: left;
     margin-top: 60px;
     color: #ffff;
     flex-direction: column;
@@ -129,6 +131,7 @@ a {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .questao5{
+    text-align: left;
     margin-top: 60px;
     color: #ffff;
     flex-direction: column;
@@ -143,6 +146,7 @@ a {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .questao6{
+    text-align: left;
     margin-top: 60px;
     color: #ffff;
     flex-direction: column;
@@ -158,6 +162,7 @@ a {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 .questao7{
+    text-align: left;
     margin-top: 60px;
     color: #ffff;
     flex-direction: column;
@@ -173,6 +178,7 @@ a {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 .questao8{
+    text-align: left;
     margin-top: 60px;
     color: #ffff;
     flex-direction: column;
@@ -188,6 +194,7 @@ a {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .questao9{
+    text-align: left;
     margin-top: 60px;
     color: #ffff;
     flex-direction: column;
@@ -203,6 +210,7 @@ a {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .questao10{
+    text-align: left;
     margin-top: 60px;
     color: #ffff;
     flex-direction: column;
@@ -252,7 +260,8 @@ a[href="#questao1"]{
     }
     
     html {
-        scroll-behavior: inherit;
+        scroll-behavior: smooth;
         overflow: hidden;
+
         
     }

@@ -225,7 +225,7 @@
                 </section>  </center>";
             }
 
-            echo " 
+            echo " <center>
             <p id='questao". $posicao+1 ."'> </p>
            <br> 
             <div class='questao".$posicao+1 ."'><br>";
@@ -256,7 +256,7 @@
                 }
 
             }
-            echo "</div>";
+            echo "</div> </center>";
             $posicao++;
         }
 
