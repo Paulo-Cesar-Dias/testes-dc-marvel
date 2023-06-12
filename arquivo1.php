@@ -3,17 +3,11 @@
     //variáveis
         $calculo = "";
         $jaexe=false;
-        $alternativa1 = "";
-        $alternativa2 = "";
-        $alternativa3 = "";
-        $alternativa4 = "";
-        $alternativa5 = "";
-        $alternativa6 = "";
-        $alternativa7 = "";
-        $alternativa8 = "";
-        $alternativa9 = "";
-        $alternativa10 = "";
+        $alternativa=array();
+        $posi_alternativa=0;
         $posicao = 0;
+        $posicaoalternada=array(0,1,2,3,4,5,6,7,8,9);
+        shuffle($posicaoalternada);
         $ponto = 0;
         $mais_homi="";
         
@@ -94,105 +88,60 @@
 
         //Pegando a opção dada pelo usuário
         if(isset($_POST["alternativa1"])){
-            $alternativa1 = $_POST["alternativa1"];
+            $alternativa[0] = $_POST["alternativa1"];
         }
 
         if(isset($_POST["alternativa2"])){
-            $alternativa2 = $_POST["alternativa2"];
+            $alternativa[1] = $_POST["alternativa2"];
         }
 
         if(isset($_POST["alternativa3"])){
-            $alternativa3 = $_POST["alternativa3"];
+            $alternativa[2] = $_POST["alternativa3"];
         }
 
         if(isset($_POST["alternativa4"])){
-            $alternativa4 = $_POST["alternativa4"];
+            $alternativa[3] = $_POST["alternativa4"];
         }
 
         if(isset($_POST["alternativa5"])){
-            $alternativa5 = $_POST["alternativa5"];
+            $alternativa[4] = $_POST["alternativa5"];
         }
         if(isset($_POST["alternativa6"])){
-            $alternativa6 = $_POST["alternativa6"];
+            $alternativa[5] = $_POST["alternativa6"];
         }
 
         if(isset($_POST["alternativa7"])){
-            $alternativa7 = $_POST["alternativa7"];
+            $alternativa[6] = $_POST["alternativa7"];
         }
 
         if(isset($_POST["alternativa8"])){
-            $alternativa8 = $_POST["alternativa8"];
+            $alternativa[7] = $_POST["alternativa8"];
         }
 
         if(isset($_POST["alternativa9"])){
-            $alternativa9 = $_POST["alternativa9"];
+            $alternativa[8] = $_POST["alternativa9"];
         }
 
         if(isset($_POST["alternativa10"])){
-            $alternativa10 = $_POST["alternativa10"];
+            $alternativa[9] = $_POST["alternativa10"];
         }
         if(isset($_POST["mais_homi"])){
             $mais_homi= $_POST["mais_homi"];
         }
 
-        if(is_numeric($alternativa1)){
-            if($perguntas[0][$alternativa1][1] == true){
+        function pontuacao(){
+            global $posi_alternativa;
+            global $alternativa;
+            global $perguntas;
+            global $ponto;
+            if ($perguntas[$posi_alternativa][$alternativa[$posi_alternativa]][1]==true) {
+                # code...
                 $ponto++;
             }
+            $posi_alternativa++;
         }
-
-        if(is_numeric($alternativa2)){
-            if($perguntas[1][$alternativa2][1] == true){
-                $ponto++;
-            }
-        }
-
-        if(is_numeric($alternativa3)){
-            if($perguntas[2][$alternativa3][1] == true){
-                $ponto++;
-            }
-        }
-
-        if(is_numeric($alternativa4)){
-            if($perguntas[3][$alternativa4][1] == true){
-                $ponto++;
-            }
-        }
-
-        if(is_numeric($alternativa5)){
-            if($perguntas[4][$alternativa5][1] == true){
-                $ponto++;
-            }
-        }
-
-        if(is_numeric($alternativa6)){
-            if($perguntas[5][$alternativa6][1] == true){
-                $ponto++;
-            }
-        }
-
-        if(is_numeric($alternativa7)){
-            if($perguntas[6][$alternativa7][1] == true){
-                $ponto++;
-            }
-        }
-
-        if(is_numeric($alternativa8)){
-            if($perguntas[7][$alternativa8][1] == true){
-                $ponto++;
-            }
-        }
-
-        if(is_numeric($alternativa9)){
-            if($perguntas[8][$alternativa9][1] == true){
-                $ponto++;
-            }
-        }
-
-        if(is_numeric($alternativa10)){
-            if($perguntas[9][$alternativa10][1] == true){
-                $ponto++;
-            }
+        for ($i=0; $i < 10; $i++) { 
+            pontuacao();
         }
 
         echo"<center><div class='resultado'>
@@ -207,6 +156,10 @@
             $jaexe=true;
         }
         //função da pergunta. Boa sorte pra entender :)
+
+    
+
+
         function perguntas(){
             global $perguntas;
             global $posicao;

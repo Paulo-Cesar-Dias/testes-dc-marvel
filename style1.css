@@ -40,6 +40,7 @@ h1{
     padding: 85px;
     
     
+    
 }
 form [type="text"]{
     align-items: center;
@@ -64,6 +65,7 @@ form [type="text"]{
     height: 470px;
     padding: 35px; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 a {
     background-color: red;
@@ -99,6 +101,7 @@ a {
     height: 470px;
     padding: 35px; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 .questao3{
     text-align: left;
@@ -114,6 +117,7 @@ a {
     height: 470px;
     padding: 35px; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 .questao4{
     text-align: left;
@@ -129,6 +133,7 @@ a {
     height: 470px;
     padding: 35px; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 .questao5{
     text-align: left;
@@ -144,6 +149,7 @@ a {
     height: 470px;
     padding: 35px; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 .questao6{
     text-align: left;
@@ -160,6 +166,7 @@ a {
     height: 470px;
     padding: 35px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    scroll-behavior: smooth;
 }
 .questao7{
     text-align: left;
@@ -176,6 +183,7 @@ a {
     height: 470px;
     padding: 35px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    scroll-behavior: smooth;
 }
 .questao8{
     text-align: left;
@@ -192,6 +200,7 @@ a {
     height: 470px;
     padding: 35px; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 .questao9{
     text-align: left;
@@ -208,6 +217,7 @@ a {
     height: 470px;
     padding: 35px; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 .questao10{
     text-align: left;
@@ -224,6 +234,7 @@ a {
     height: 470px;
     padding: 35px; 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 .resultado{
     margin-top: 50px;
@@ -260,7 +271,7 @@ a[href="#questao1"]{
     }
     
     html {
-        scroll-behavior: smooth;
+        
         overflow: hidden;
 
         
