@@ -3,7 +3,7 @@
     //variáveis
         $calculo = "";
         $jaexe=false;
-        $alternativa=array();
+        $alternativa=array("","","","","","","","","","");
         $posi_alternativa = 0;
         $posicao = 0;
         $posicaoalternada=array(0,1,2,3,4,5,6,7,8,9);
@@ -134,10 +134,14 @@
             global $alternativa;
             global $perguntas;
             global $ponto;
+            $chama_papai = $alternativa[$posi_alternativa];
 
-            if ($perguntas[$posi_alternativa][$alternativa[$posi_alternativa]][1]==true) {
-                $ponto++;
+            if(is_numeric($chama_papai)){
+                if($perguntas[$posi_alternativa][$alternativa[$posi_alternativa]][1]==true){
+                    $ponto++;
+                }
             }
+
             $posi_alternativa++;
         }
 
@@ -148,17 +152,27 @@
         function exibicao(){
             global $alternativa;
             global $perguntas;
+            
 
             for($i=0; $i<10; $i++){
-                if($perguntas[$i][$alternativa[$i]][1]==true){
-                    echo $perguntas[$i]["questao"] . " || Acertou <br>";
+                $chama_mamae=$alternativa[$i];
+
+                if(is_numeric($chama_mamae)){
+
+                    if($perguntas[$i][$alternativa[$i]][1]==true){
+                        echo $perguntas[$i]["questao"] . " || Acertou <br>";
+                    }else{
+                        echo $perguntas[$i]["questao"] . " || Errou <br>";
+                    }
                 }else{
-                    echo $perguntas[$i]["questao"] . " || Errou <br>";
+                    echo "<br><br> Não marcou nada na questão " . $i+1 ;
                 }
             }
         }
 
-        echo"<center>
+        echo"
+        <p id='resultado'></p>
+        <center>
                 <div class='resultado'>
                 <center>
                     <p id='pontuacao'><br>
@@ -166,11 +180,9 @@
                     " . $ponto ." de 10</p>
                 </center>
 
-                <a href='#questao1'> Recomeçar </a><br><br><br>";
+                <a href='#questao1'> Recomeçar </a>";
 
-                for($i=0; $i<10; $i++){
-                    exibicao();
-                }
+                exibicao();
         
             echo "</div>
             </center>";
@@ -202,30 +214,30 @@
                 <p id='questao". $posicao+1 ."'> </p><br> 
                 <div class='questao".$posicao+1 ."'><br>";
 
-            if ($posicao>0){
-                echo "<a href='#questao". $posicao ."' >Voltar</a><br>";
-                }
-                echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
-                
-                <input type='radio' name='alternativa" . $posicao+1 . "' value='0'>
-                <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
-                
-                <input type='radio' name='alternativa" . $posicao+1 . "' value='1'>
-                <label for=''>" . $perguntas[$posicao][1][0] . "</label><br>
-                
-                <input type='radio' name='alternativa" . $posicao+1 . "' value='2'>
-                <label for=''>" . $perguntas[$posicao][2][0] . "</label><br>
-                
-                <input type='radio' name='alternativa" . $posicao+1 . "' value='3'>
-                <label for=''>" . $perguntas[$posicao][3][0] . "</label><br>
-                
-                ";
+                if ($posicao>0){
+                    echo "<a href='#questao". $posicao ."'>Voltar</a><br>";
+                    }
+                    echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
+                    
+                    <input type='radio' name='alternativa" . $posicao+1 . "' value='0'>
+                    <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
+                    
+                    <input type='radio' name='alternativa" . $posicao+1 . "' value='1'>
+                    <label for=''>" . $perguntas[$posicao][1][0] . "</label><br>
+                    
+                    <input type='radio' name='alternativa" . $posicao+1 . "' value='2'>
+                    <label for=''>" . $perguntas[$posicao][2][0] . "</label><br>
+                    
+                    <input type='radio' name='alternativa" . $posicao+1 . "' value='3'>
+                    <label for=''>" . $perguntas[$posicao][3][0] . "</label><br>
+                    
+                    ";
                 if ($posicao==9){
-                    echo "<input type='submit' name='Calcular' value='Finalizar'>";
+                    echo "<input type='submit' name='Calcular' value='Finalizar' href='#resultado'>";
                 }else{
                     echo "<a href='#questao". $posicao+2 ."' >Próximo</a>";
                 if ($jaexe==true) {
-                    echo "<br><br><a href='#pontuacao'>Desistir e voltar para pontuação</a><br>";
+                    echo "<br><br><a href='#resultado'>Desistir e voltar para pontuação</a><br>";
                 }
 
             }
