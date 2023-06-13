@@ -1,18 +1,17 @@
 <?php
 
-    //variáveis
+        //variáveis
+        $alternativa = array("","","","","","","","","","");
+        $posicaoalternada = array(0,1,2,3,4,5,6,7,8,9);
+        $perguntas = array();
+        shuffle($posicaoalternada);
         $calculo = "";
-        $jaexe=false;
-        $alternativa=array("","","","","","","","","","");
+        $mais_homi = "";
         $posi_alternativa = 0;
         $posicao = 0;
-        $posicaoalternada=array(0,1,2,3,4,5,6,7,8,9);
-        shuffle($posicaoalternada);
         $ponto = 0;
-        $mais_homi="";
-        
-    $perguntas = array();
-
+        $jaexe = false;
+    
         //1
         $perguntas[0]["questao"]="1. Qual o verdadeiro nome do lanterna verde?";
         $perguntas[0][0]=array("Arthur",false);
@@ -106,6 +105,7 @@
         if(isset($_POST["alternativa5"])){
             $alternativa[4] = $_POST["alternativa5"];
         }
+
         if(isset($_POST["alternativa6"])){
             $alternativa[5] = $_POST["alternativa6"];
         }
@@ -125,6 +125,7 @@
         if(isset($_POST["alternativa10"])){
             $alternativa[9] = $_POST["alternativa10"];
         }
+
         if(isset($_POST["mais_homi"])){
             $mais_homi= $_POST["mais_homi"];
         }
@@ -141,7 +142,6 @@
                     $ponto++;
                 }
             }
-
             $posi_alternativa++;
         }
 
@@ -164,34 +164,35 @@
                     }else{
                         echo $perguntas[$i]["questao"] . " || Errou <br>";
                     }
+
                 }else{
                     echo "<br><br> Não marcou nada na questão " . $i+1 ;
                 }
             }
         }
 
-        echo"
-        <p id='resultado'></p>
-        <center>
+        echo "
+            <p id='resultado'></p><br><br>
+            <center>
                 <div class='resultado'>
-                <center>
-                    <p id='pontuacao'><br>
-                    Parabens ". $mais_homi ."!!! Você acertou
-                    " . $ponto ." de 10</p>
-                </center>
+                    <center>
+                        <p id='pontuacao'><br>
+                            Parabens ". $mais_homi ."!!! Você acertou
+                            " . $ponto ." de 10
+                        </p>
+                    </center>
 
-                <a href='#questao1'> Recomeçar </a>";
+                    <a href='#questao1'> Recomeçar </a>";
 
-                exibicao();
-        
-            echo "</div>
+                    exibicao();
+        echo "
+                </div>
             </center>";
             
             $jaexe=true;
         }
 
         //função da pergunta. Boa sorte pra entender :)
-
         function perguntas(){
             global $perguntas;
             global $posicao;
@@ -199,49 +200,57 @@
             
             if($posicao==0){
                 echo " 
-                <center><section class='area-teste'>
-                <div class='teste'>
-                    <div class='questao". $posicao ."'>
-                <center><h1>INSIRA SEU NICK</h1>  <input type='text' placeholder= Nickname autocomplete= 'off'
-                    name='mais_homi'>
-                <a href='#questao1'>Começar</a> </center>
-                </div>
-                </div>
-                </section></center>";
+                <center>
+                    <section class='area-teste'>
+                        <div class='teste'>
+                            <div class='questao". $posicao ."'>
+                                <center>
+                                    <h1>INSIRA SEU NICK</h1>
+                                    <input type='text' 
+                                    placeholder= Nickname autocomplete= 'off'
+                                    name='mais_homi'>
+
+                                    <a href='#questao1'>Começar</a> 
+                                </center>
+                            </div>
+                        </div>
+                    </section>
+                </center>";
             }
 
-            echo "<center>
-                <p id='questao". $posicao+1 ."'> </p><br> 
-                <div class='questao".$posicao+1 ."'><br>";
+            echo "
+                <center>
+                    <p id='questao". $posicao+1 ."'></p><br> 
+                    <div class='questao". $posicao+1 ."'><br>";
 
-                if ($posicao>0){
-                    echo "<a href='#questao". $posicao ."'>Voltar</a><br>";
-                    }
-                    echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
-                    
-                    <input type='radio' name='alternativa" . $posicao+1 . "' value='0'>
-                    <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
-                    
-                    <input type='radio' name='alternativa" . $posicao+1 . "' value='1'>
-                    <label for=''>" . $perguntas[$posicao][1][0] . "</label><br>
-                    
-                    <input type='radio' name='alternativa" . $posicao+1 . "' value='2'>
-                    <label for=''>" . $perguntas[$posicao][2][0] . "</label><br>
-                    
-                    <input type='radio' name='alternativa" . $posicao+1 . "' value='3'>
-                    <label for=''>" . $perguntas[$posicao][3][0] . "</label><br>
-                    
-                    ";
-                if ($posicao==9){
-                    echo "<input type='submit' name='Calcular' value='Finalizar' href='#resultado'>";
-                }else{
-                    echo "<a href='#questao". $posicao+2 ."' >Próximo</a>";
-                if ($jaexe==true) {
-                    echo "<br><br><a href='#resultado'>Desistir e voltar para pontuação</a><br>";
-                }
+                        if ($posicao>0){
+                            echo "<a href='#questao". $posicao ."'>Voltar</a><br>";
+                        }
+                        echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
+                            
+                        <input type='radio' name='alternativa" . $posicao+1 . "' value='0'>
+                        <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
+                            
+                        <input type='radio' name='alternativa" . $posicao+1 . "' value='1'>
+                        <label for=''>" . $perguntas[$posicao][1][0] . "</label><br>
+                            
+                        <input type='radio' name='alternativa" . $posicao+1 . "' value='2'>
+                        <label for=''>" . $perguntas[$posicao][2][0] . "</label><br>
+                            
+                        <input type='radio' name='alternativa" . $posicao+1 . "' value='3'>
+                        <label for=''>" . $perguntas[$posicao][3][0] . "</label><br>";
 
-            }
-            echo "</div> </center>";
+                        if ($posicao==9){
+                            echo "<input type='submit' name='Calcular' value='Finalizar' href='#resultado'>";
+                        }else{
+                            echo "<a href='#questao". $posicao+2 ."' >Próximo</a>";
+                            if ($jaexe==true) {
+                                echo "<br><br><a href='#resultado'>Desistir e voltar para pontuação</a><br>";
+                            }
+                        }
+                echo "
+                    </div> 
+                </center>";
             $posicao++;
         }
 
@@ -262,18 +271,10 @@
 <body>
 <div class="container-fluid">
     <form action="arquivo1.php" method="post">
-
         <?php 
-            perguntas();
-            perguntas();
-            perguntas();
-            perguntas();
-            perguntas();
-            perguntas();
-            perguntas();
-            perguntas();
-            perguntas();
-            perguntas();
+            for($i=0; $i<10; $i++){
+                perguntas();
+            }
         ?>
     </form>
 </div>
