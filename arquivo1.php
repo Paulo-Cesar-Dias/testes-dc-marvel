@@ -4,7 +4,7 @@
         $calculo = "";
         $jaexe=false;
         $alternativa=array();
-        $posi_alternativa=0;
+        $posi_alternativa = 0;
         $posicao = 0;
         $posicaoalternada=array(0,1,2,3,4,5,6,7,8,9);
         shuffle($posicaoalternada);
@@ -134,32 +134,48 @@
             global $alternativa;
             global $perguntas;
             global $ponto;
+
             if ($perguntas[$posi_alternativa][$alternativa[$posi_alternativa]][1]==true) {
-                # code...
                 $ponto++;
             }
             $posi_alternativa++;
         }
 
-        for ($i=0; $i < 10; $i++) { 
+        for ($i=0; $i<10; $i++) { 
             pontuacao();
         }
 
-        echo"<center><div class='resultado'>
+        function exibicao(){
+            global $alternativa;
+            global $perguntas;
 
-                <center><p id='pontuacao'><br>
-                Parabens ".$mais_homi."!!! Você acertou
-                " . $ponto ." de 10</p></center>
-                <a href='#questao1'> Recomeçar </a>";
+            for($i=0; $i<10; $i++){
+                if($perguntas[$i][$alternativa[$i]][1]==true){
+                    echo $perguntas[$i]["questao"] . " || Acertou <br>";
+                }else{
+                    echo $perguntas[$i]["questao"] . " || Errou <br>";
+                }
+            }
+        }
+
+        echo"<center>
+                <div class='resultado'>
+                <center>
+                    <p id='pontuacao'><br>
+                    Parabens ". $mais_homi ."!!! Você acertou
+                    " . $ponto ." de 10</p>
+                </center>
+
+                <a href='#questao1'> Recomeçar </a><br><br><br>";
 
                 for($i=0; $i<10; $i++){
                     exibicao();
                 }
         
-            echo "</div></center>";
+            echo "</div>
+            </center>";
             
             $jaexe=true;
-
         }
 
         //função da pergunta. Boa sorte pra entender :)
@@ -171,21 +187,21 @@
             
             if($posicao==0){
                 echo " 
-    <center>    <section class='area-teste'>
-        <div class='teste'>
-            <div class='questao".$posicao."'>
-        <center>  <h1>INSIRA SEU NICK</h1>  <input type='text' placeholder= Nickname autocomplete= 'off'
-        name='mais_homi'>
-    <a href='#questao1'>Começar</a> </center>
-       </div>
-            </div>
-                </section>  </center>";
+                <center><section class='area-teste'>
+                <div class='teste'>
+                    <div class='questao". $posicao ."'>
+                <center><h1>INSIRA SEU NICK</h1>  <input type='text' placeholder= Nickname autocomplete= 'off'
+                    name='mais_homi'>
+                <a href='#questao1'>Começar</a> </center>
+                </div>
+                </div>
+                </section></center>";
             }
 
-            echo " <center>
-            <p id='questao". $posicao+1 ."'> </p>
-           <br> 
-            <div class='questao".$posicao+1 ."'><br>";
+            echo "<center>
+                <p id='questao". $posicao+1 ."'> </p><br> 
+                <div class='questao".$posicao+1 ."'><br>";
+
             if ($posicao>0){
                 echo "<a href='#questao". $posicao ."' >Voltar</a><br>";
                 }
@@ -215,20 +231,6 @@
             }
             echo "</div> </center>";
             $posicao++;
-        }
-
-        function exibicao(){
-            global $alternativa;
-            global $posi_alternativa;
-            global $perguntas;
-
-            if($perguntas[$posi_alternativa][$alternativa[$posi_alternativa]][1] == true){
-                echo $perguntas[$posi_alternativa]["questao"] . "|| Acertou" ;
-            }else{
-                echo $perguntas[$posi_alternativa]["questao"] . "|| Errou <br>";
-            }
-
-            $posi_alternativa++;
         }
 
 ?>
