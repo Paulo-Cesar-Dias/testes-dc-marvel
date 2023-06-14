@@ -259,7 +259,17 @@ a{
 }
 
 .ze{
-    background-color: black;
+    color: #0772EB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #23232e;
+    border-radius: 115px;
+    width: 505px;
+    height: 520px;
+    padding: 35px;
+    margin-top: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 a[href="#questao1"]{
