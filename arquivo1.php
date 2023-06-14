@@ -69,11 +69,11 @@
         $perguntas[7][3]=array("T'Challa",true);
             
         //9
-        $perguntas[8]["questao"]="9. Qual o primeiro par romântico do homem-aranha nas HQ?";
-        $perguntas[8][0]=array("Gwen Stacy",true);
+        $perguntas[8]["questao"]="9. Qual o par romântico do homem-aranha mais popular?";
+        $perguntas[8][0]=array("Gwen Stacy",false);
         $perguntas[8][1]=array("Michelle Jones",false);
         $perguntas[8][2]=array("Gata Negra",false);
-        $perguntas[8][3]=array("Mary Jane",false);
+        $perguntas[8][3]=array("Mary Jane",true);
         
         //10
         $perguntas[9]["questao"]="10. Os nomes respectivos reais dos personagens Capitão América, Hulk e Homem de Ferro são:";
@@ -182,10 +182,10 @@
                         </p>
                     </center>
 
-                    <a href='#questao1'> Recomeçar </a>";
-
-                    exibicao();
-        echo "
+                    <a href='#questao1'> Recomeçar </a> 
+                        <div class=ze>";
+                            exibicao();
+                    echo "</div>
                 </div>
             </center>";
             
@@ -249,7 +249,7 @@
                             }
                         }
                 echo "
-                    </div> 
+                    </div>
                 </center>";
             $posicao++;
         }
