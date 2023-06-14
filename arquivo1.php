@@ -182,10 +182,10 @@
                         </p>
                     </center>
 
-                    <a href='#questao1'> Recomeçar </a>";
-
-                    exibicao();
-        echo "
+                    <a href='#questao1'> Recomeçar </a> 
+                        <div class=ze>";
+                            exibicao();
+                    echo "</div>
                 </div>
             </center>";
             
@@ -249,7 +249,7 @@
                             }
                         }
                 echo "
-                    </div> 
+                    </div>
                 </center>";
             $posicao++;
         }

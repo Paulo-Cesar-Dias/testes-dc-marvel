@@ -258,6 +258,10 @@ a{
     
 }
 
+.ze{
+    background-color: black;
+}
+
 a[href="#questao1"]{
     background-color: red;
     width: 90px;
