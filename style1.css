@@ -24,16 +24,21 @@ body{
     width: 40% ;
 }
 
+.chora_nao{
+    width: 70px;
+    
+}
 form [type="submit"]{
     display: block;
     background-color: #0772EB;
-    font-size: 28px;
+    font-size: 26px;
     text-transform: uppercase;
     font-weight: bold;
     border: none;
+    border-radius: 15px;
     color: #ffff;
     cursor: pointer;
-    margin-top: 40px;  
+    margin-top: 30px;  
 }
 
 h1{
@@ -63,9 +68,10 @@ h1{
 
 form [type="text"]{
     align-items: center;
-    width: 250px;
+    width: 375px;
     padding: 5px;
     margin-top:20px;
+    border-radius: 10px;
 }
 
 .questao1{
