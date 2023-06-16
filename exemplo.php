@@ -1,9 +1,11 @@
 <?php
 
+    $final = 0;
     $pq = 0;
     $pt = 0;
     $alt = "";
-    $jaexe="";
+    $jaexe = "";
+
     $class=array("normal","normal","normal","normal");
     $perguntas[0]["questao"]="1. Qual o verdadeiro nome do lanterna verde?";
     $perguntas[0][0]=array("Arthur",false);
@@ -83,34 +85,46 @@
         $pq = $_POST['passar'] - 1;
         $pt=$_POST['pontos'];
     }
-
+    
     if(isset($_POST['finalizar'])){
-        echo "finalizooooooouuu!!!!!";
+        $final = $_POST['finalizar'];
+
+        $pq = $_POST['passar']+1;
+        $pt = $_POST['pontos'];
+
+        echo "
+        <div class = 'finalizando'>
+            Sua pontuação deu bom " . $pt;
+        echo 
+        "</div>";
+
     }
 
     if(isset($_POST['alternativa'])){
+
         $alt=$_POST['alternativa'];
         $pt=$_POST['pontos'];
         $pq = $_POST['passar']-1;
         $jaexe="disabled";
+
         if(is_numeric($alt)){
+
             if($perguntas[$pq][$alt][1]==true){
                 echo "acertou";
                 $pt = $pt+100;
                 $class[$alt]="acertou";
-
             }else{
                 echo "errou";
                 $class[$alt]="errou";
             }    
         }
 
-        $pq = $_POST['passar']; 
+        $pq = $_POST['passar'];
+
     }
 
-    
-
 function perguntas($posicao){
+
     global $perguntas;
     global $pt;
     global $class;
@@ -118,65 +132,71 @@ function perguntas($posicao){
    
     if($posicao==0){
         
-    echo " 
-    <center>
-        <section class='area-teste'>
-            <div class='teste'>
-                <div class='questao". $posicao ."'>
-                    <center>
-                        <h1>INSIRA SEU NICK</h1>
-                        <input type='text' 
-                        placeholder= Nickname autocomplete= 'off'
-                        name='mais_homi'>
-                        
-                        <input type='submit' name='proximo' value='Começar'> 
-                    </center>
+        echo " 
+        <center>
+            <section class='area-teste'>
+                <div class='teste'>
+                    <div class='questao". $posicao ."'>
+                        <center>
+                            <h1>INSIRA SEU NICK</h1>
+                            <input type='text' 
+                            placeholder= Nickname autocomplete= 'off'
+                            name='mais_homi'>
+                            
+                            <input type='submit' name='proximo' value='Começar'> 
+                        </center>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </center>";
+            </section>
+        </center>";
 
     }else{
-    $posicao--;
 
-    echo "
-        <center>
-            <div class='questao". $posicao+1 ."'><br>";
+        $posicao--;
 
-                echo $pt;
+        if($posicao<10){
+            echo "
+            <center>
+                <div class='questao". $posicao+1 ."'><br>";
 
-                echo "<br>";
+                    echo $pt;
 
-                echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
-                <div class=". $class[0] .">
-                    <input type='submit' ". $jaexe ." name='alternativa' value='0'>
-                    <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
-                </div>
-                <div class=". $class[1] .">    
-                    <input class='chora_nao' ". $jaexe ." type='submit' name='alternativa' value='1'>
-                    <label for=''>" . $perguntas[$posicao][1][0] . "</label><br>
-                </div>
-                <div class=". $class[2] .">
-                <input class='chora_nao' ". $jaexe ."  type='submit' name='alternativa' value='2'>
-                <label for=''>" . $perguntas[$posicao][2][0] . "</label><br>
-                </div>
-                <div class=". $class[3] .">
-                <input class='chora_nao' ". $jaexe ." type='submit' name='alternativa' value='3'>
-                <label for=''>" . $perguntas[$posicao][3][0] . "</label>
-                </div>
-                
-                <br>";
+                    echo "<br>";
 
-                if($posicao == 9){
-                    echo "<input type='submit' name='finalizar' value='Finalizar'>";
-                }else{
-                    echo "<input type='submit' name='proximo' value='Próximo'>";
-                }
-        echo "
-            </div> 
-        </center>";
- 
+                    echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
+                    <div class=". $class[0] .">
+                        <input type='submit' ". $jaexe ." name='alternativa' value='0'>
+                        <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
+                    </div>
+                    <div class=". $class[1] .">    
+                        <input class='chora_nao' ". $jaexe ." type='submit' name='alternativa' value='1'>
+                        <label for=''>" . $perguntas[$posicao][1][0] . "</label><br>
+                    </div>
+                    <div class=". $class[2] .">
+                        <input class='chora_nao' ". $jaexe ."  type='submit' name='alternativa' value='2'>
+                        <label for=''>" . $perguntas[$posicao][2][0] . "</label><br>
+                    </div>
+                    <div class=". $class[3] .">
+                        <input class='chora_nao' ". $jaexe ." type='submit' name='alternativa' value='3'>
+                        <label for=''>" . $perguntas[$posicao][3][0] . "</label>
+                    </div>
+                    
+                    <br>";
+
+                    if($posicao == 9){
+                        echo "<input type='submit' name='finalizar' value='Finalizar'>";
+                    }else{
+                        echo "<input type='submit' name='proximo' value='Próximo'>";
+                    }
+            echo "
+                </div> 
+            </center>";
+        }else{
+            echo "Exibindo tela final";
         }
+
+    }
+
 }
 
 ?>
@@ -197,8 +217,8 @@ function perguntas($posicao){
     <h1>QUIZ MARVEL/DC</h1>
 
     <form action="exemplo.php" method="post">
-        <input type="text" name="passar"  value="<?php echo $pq?>"/>
-        <input type="text" name="pontos"  value="<?php echo $pt?>"/>
+        <input type="text" name="passar" hidden value="<?php echo $pq?>"/>
+        <input type="text" name="pontos" hidden value="<?php echo $pt?>"/>
         <?php perguntas($pq) ?>
     </form>
 
