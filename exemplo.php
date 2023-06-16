@@ -3,7 +3,8 @@
     $pq = 0;
     $pt = 0;
     $alt = "";
-
+    $jaexe="";
+    $class=array("normal","normal","normal","normal");
     $perguntas[0]["questao"]="1. Qual o verdadeiro nome do lanterna verde?";
     $perguntas[0][0]=array("Arthur",false);
     $perguntas[0][1]=array("Henry Pym",false);
@@ -75,22 +76,32 @@
 
     if(isset($_POST['proximo'])){
         $pq = $_POST['passar'] + 1;
+        $pt=$_POST['pontos'];
     }
 
     if(isset($_POST['voltar'])){
         $pq = $_POST['passar'] - 1;
+        $pt=$_POST['pontos'];
+    }
+
+    if(isset($_POST['finalizar'])){
+        echo "finalizooooooouuu!!!!!";
     }
 
     if(isset($_POST['alternativa'])){
         $alt=$_POST['alternativa'];
+        $pt=$_POST['pontos'];
         $pq = $_POST['passar']-1;
-
+        $jaexe="disabled";
         if(is_numeric($alt)){
             if($perguntas[$pq][$alt][1]==true){
                 echo "acertou";
                 $pt = $pt+100;
+                $class[$alt]="acertou";
+
             }else{
                 echo "errou";
+                $class[$alt]="errou";
             }    
         }
 
@@ -102,7 +113,8 @@
 function perguntas($posicao){
     global $perguntas;
     global $pt;
-
+    global $class;
+    global $jaexe;
    
     if($posicao==0){
         
@@ -131,30 +143,32 @@ function perguntas($posicao){
         <center>
             <div class='questao". $posicao+1 ."'><br>";
 
-                if ($posicao>0){
-                    echo "<input type='submit' name='voltar' value='Voltar'><br>";
-                }
-
                 echo $pt;
 
                 echo "<br>";
 
                 echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
-                    
-                <input type='submit' name='alternativa' value='0'>
-                <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
-                    
-                <input class='chora_nao' type='submit' name='alternativa' value='1'>
-                <label for=''>" . $perguntas[$posicao][1][0] . "</label><br>
-                    
-                <input class='chora_nao' type='submit' name='alternativa' value='2'>
+                <div class=". $class[0] .">
+                    <input type='submit' ". $jaexe ." name='alternativa' value='0'>
+                    <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
+                </div>
+                <div class=". $class[1] .">    
+                    <input class='chora_nao' ". $jaexe ." type='submit' name='alternativa' value='1'>
+                    <label for=''>" . $perguntas[$posicao][1][0] . "</label><br>
+                </div>
+                <div class=". $class[2] .">
+                <input class='chora_nao' ". $jaexe ."  type='submit' name='alternativa' value='2'>
                 <label for=''>" . $perguntas[$posicao][2][0] . "</label><br>
-                    
-                <input class='chora_nao' type='submit' name='alternativa' value='3'>
-                <label for=''>" . $perguntas[$posicao][3][0] . "</label><br>";
+                </div>
+                <div class=". $class[3] .">
+                <input class='chora_nao' ". $jaexe ." type='submit' name='alternativa' value='3'>
+                <label for=''>" . $perguntas[$posicao][3][0] . "</label>
+                </div>
+                
+                <br>";
 
                 if($posicao == 9){
-                    echo "<input type='submit' name='proximo' value='Finalizar'>";
+                    echo "<input type='submit' name='finalizar' value='Finalizar'>";
                 }else{
                     echo "<input type='submit' name='proximo' value='Próximo'>";
                 }
@@ -184,6 +198,7 @@ function perguntas($posicao){
 
     <form action="exemplo.php" method="post">
         <input type="text" name="passar"  value="<?php echo $pq?>"/>
+        <input type="text" name="pontos"  value="<?php echo $pt?>"/>
         <?php perguntas($pq) ?>
     </form>
 

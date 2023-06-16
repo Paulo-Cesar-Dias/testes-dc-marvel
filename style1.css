@@ -1,7 +1,25 @@
 body{
-   background-image: url(img/px.jpg);
+    background-image: url(img/px.jpg);
 }
-
+.normal{
+    
+    display: flex;
+    margin-bottom: 0%;
+}
+.acertou{
+    background-color: rgba(14, 164, 0, 0.668);
+    display: flex;
+    margin-bottom: 0%;
+    border-radius: 20px;
+    width: 40% ;
+}
+.errou{
+    background-color: rgba(255, 0, 0, 0.601);
+    display: flex;
+    margin-bottom: 0%;
+    border-radius: 20px;
+    width: 40% ;
+}
 form [type="submit"]{
     display: block;
     background-color: #0772EB;
@@ -46,6 +64,7 @@ form [type="text"]{
     padding: 5px;
     margin-top:20px;
 }
+
 
 .questao1{
     text-align: left;
