@@ -310,9 +310,20 @@ a[href="#questao1"]{
 }
 
 /*Class para a edição de mostragem da pontuação*/
-.finalizando{
+.finalizando{ 
+    background-color: red; 
+    color: white; 
+    background-position: center;
+    text-align: center; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    
 
 }
+    
+
+    
+
+
 
     /* Organização da página */
     div{

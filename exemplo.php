@@ -93,10 +93,10 @@
         $pt = $_POST['pontos'];
 
         echo "
-        <div class = 'finalizando'>
-            Sua pontuação deu bom " . $pt;
-        echo 
-        "</div>";
+        <div class = 'finalizando'> 
+            <center>
+            Sua pontuação é : " .$pt.
+        "</div>"; 
 
     }
 
