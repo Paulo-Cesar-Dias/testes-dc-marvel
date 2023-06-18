@@ -89,20 +89,12 @@
         $final = $_POST['finalizar'];
         $pq = $_POST['passar']+1;
         $pt = $_POST['pontos'];
-
         $usuario = $_POST['usuario'];
-
-        echo "
-        <div class = 'finalizando'>
-            Sucesso " . $usuario . "! Sua pontuação foi: " . $pt . " de 1000";
-        echo 
-        "</div><br><br>";
-
-        echo "<input class='recomeco' type='submit' name='recomeco' value='Recomeçar'>";
     }
 
     if(isset($_POST['recomeco'])){
-        $recomeco = $_POST['recomeco'];
+        $pq = $_POST['passar'];
+        $usuario = "";
     }
 
     if(isset($_POST['alternativa'])){
@@ -187,7 +179,7 @@ function perguntas($posicao){
                         <label for=''>" . $perguntas[$posicao][1][0] . "</label><br>
                     </div>
                     <div class=". $class[2] .">
-                        <input class='chora_nao' ". $jaexe ."  type='submit' name='alternativa' value='2'>
+                        <input class='chora_nao' ". $jaexe ." type='submit' name='alternativa' value='2'>
                         <label for=''>" . $perguntas[$posicao][2][0] . "</label><br>
                     </div>
                     <div class=". $class[3] .">
@@ -206,6 +198,14 @@ function perguntas($posicao){
             echo "
                 </div> 
             </center>";
+        }else{
+            echo "<div class = 'finalizando'>
+                    Sucesso " . $usuario . "! Sua pontuação foi: " . $pt . " de 1000";
+                echo 
+                "</div><br><br>";
+
+                echo "<input class='recomeco' type='submit' name='recomeco' value='Recomeçar'>
+                    <input type='text' name='passar' hidden value='0'>";
         }
     }
 }
