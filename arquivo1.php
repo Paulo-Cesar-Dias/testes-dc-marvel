@@ -94,7 +94,7 @@
 
         echo "
         <div class = 'finalizando'>
-            Sua pontuação deu bom " . $pt;
+            Sucesso! Sua pontuação foi: " . $pt . " de 1000";
         echo 
         "</div>";
     }
@@ -166,11 +166,13 @@ function perguntas($posicao){
             <center>
                 <div class='questao". $posicao+1 ."'><br>";
 
-                    echo $pt;
+                    echo "<div class='ponto'>" . 
+                            "Ponto(s): " . $pt . 
+                        "</div>";
 
                     echo "<br>";
 
-                    echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br>
+                    echo "<label for=''>" . $perguntas[$posicao]['questao'] . "</label><br><br>
                     <div class=". $class[0] .">
                         <input class='chora_nao' type='submit' ". $jaexe ." name='alternativa' value='0'>
                         <label for=''>" . $perguntas[$posicao][0][0] . "</label><br>
@@ -201,7 +203,7 @@ function perguntas($posicao){
             </center>";
 
         }else{
-            echo "Exibindo tela final";
+            
         }
     }
 }
