@@ -5,90 +5,112 @@
     $pt = 0;
     $alt = "";
     $jaexe = "";
+    $alternancia=array(1,2,3,4,5,6,7,8,9);
+    shuffle($alternancia);
 
-    $class=array("normal","normal","normal","normal");
-    $perguntas[0]["questao"]="1. Qual o verdadeiro nome do lanterna verde?";
-    $perguntas[0][0]=array("Arthur",false);
-    $perguntas[0][1]=array("Henry Pym",false);
-    $perguntas[0][2]=array("Não há um único nome",true);
-    $perguntas[0][3]=array("Jack Oswald",false);
+    array_unshift($alternancia,0);
+    //arrays
+        $class=array("normal","normal","normal","normal");
+        $perguntas[0]["questao"]="1. Qual o verdadeiro nome do lanterna verde?";
+        $perguntas[0][0]=array("Arthur",false);
+        $perguntas[0][1]=array("Henry Pym",false);
+        $perguntas[0][2]=array("Não há um único nome",true);
+        $perguntas[0][3]=array("Jack Oswald",false);
 
-    //2
-    $perguntas[1]["questao"]="2. Qual o nome de nascença do Superman?";
-    $perguntas[1][0]=array("Kal-El",true);
-    $perguntas[1][1]=array("Clark Kent",false);
-    $perguntas[1][2]=array("Jor-El",false);
-    $perguntas[1][3]=array("Virgil Hawkins",false);
+        //2
+        $perguntas[1]["questao"]="2. Qual o nome de nascença do Superman?";
+        $perguntas[1][0]=array("Kal-El",true);
+        $perguntas[1][1]=array("Clark Kent",false);
+        $perguntas[1][2]=array("Jor-El",false);
+        $perguntas[1][3]=array("Virgil Hawkins",false);
 
-    //3
-    $perguntas[2]["questao"]="3. Qual o primeiro vilão enfrentado pela liga da justiça?";
-    $perguntas[2][0]=array("Prometheus, o gênio criminal",false);
-    $perguntas[2][1]=array("Starro, a estrela alienígena gigante",true);
-    $perguntas[2][2]=array("Darkseid",false);
-    $perguntas[2][3]=array("Amazo, android imitador de poderes",false);
+        //3
+        $perguntas[2]["questao"]="3. Qual o primeiro vilão enfrentado pela liga da justiça?";
+        $perguntas[2][0]=array("Prometheus, o gênio criminal",false);
+        $perguntas[2][1]=array("Starro, a estrela alienígena gigante",true);
+        $perguntas[2][2]=array("Darkseid",false);
+        $perguntas[2][3]=array("Amazo, android imitador de poderes",false);
 
-    //4
-    $perguntas[3]["questao"]="4. Qual a comida preferida do Batman?";
-    $perguntas[3][0]=array("Bolos",false);
-    $perguntas[3][1]=array("Bife",false);
-    $perguntas[3][2]=array("Nachos",true);
-    $perguntas[3][3]=array("Sorvete",false);
+        //4
+        $perguntas[3]["questao"]="4. Qual a comida preferida do Batman?";
+        $perguntas[3][0]=array("Bolos",false);
+        $perguntas[3][1]=array("Bife",false);
+        $perguntas[3][2]=array("Nachos",true);
+        $perguntas[3][3]=array("Sorvete",false);
 
-    //5
-    $perguntas[4]["questao"]="5. Sobre a Estelar, qual o seu planeta natal?";
-    $perguntas[4][0]=array("Terra",false);
-    $perguntas[4][1]=array("Azarath",false);
-    $perguntas[4][2]=array("Godthab",false);
-    $perguntas[4][3]=array("Tamaran",true);
+        //5
+        $perguntas[4]["questao"]="5. Sobre a Estelar, qual o seu planeta natal?";
+        $perguntas[4][0]=array("Terra",false);
+        $perguntas[4][1]=array("Azarath",false);
+        $perguntas[4][2]=array("Godthab",false);
+        $perguntas[4][3]=array("Tamaran",true);
 
-    //6
-    $perguntas[5]["questao"]="6. Qual o nome do primeiro intérprete do Homem-Aranha no MCU?";
-    $perguntas[5][0]=array("Nicholas Hammond",false);
-    $perguntas[5][1]=array("Tobey  Maguire",false);
-    $perguntas[5][2]=array("Tom Holland",true);
-    $perguntas[5][3]=array("Andrew Garfield",false);
+        //6
+        $perguntas[5]["questao"]="6. Qual o nome do primeiro intérprete do Homem-Aranha no MCU?";
+        $perguntas[5][0]=array("Nicholas Hammond",false);
+        $perguntas[5][1]=array("Tobey  Maguire",false);
+        $perguntas[5][2]=array("Tom Holland",true);
+        $perguntas[5][3]=array("Andrew Garfield",false);
 
-    //7
-    $perguntas[6]["questao"]="7. Quantas jóias do infinito podem ser anexadas na manopla do Thanos?";
-    $perguntas[6][0]=array("7 jóias",false);
-    $perguntas[6][1]=array("6 jóias",true);
-    $perguntas[6][2]=array("4 jóias",false);
-    $perguntas[6][3]=array("5 jóias",false);
+        //7
+        $perguntas[6]["questao"]="7. Quantas jóias do infinito podem ser anexadas na manopla do Thanos?";
+        $perguntas[6][0]=array("7 jóias",false);
+        $perguntas[6][1]=array("6 jóias",true);
+        $perguntas[6][2]=array("4 jóias",false);
+        $perguntas[6][3]=array("5 jóias",false);
 
-    //8
-    $perguntas[7]["questao"]="8. Qual o verdadeiro nome do Pantera Negra?";
-    $perguntas[7][0]=array("Chadwick Boseman",false);
-    $perguntas[7][1]=array("N’Jadaka",false);
-    $perguntas[7][2]=array("T’Chaka",false);
-    $perguntas[7][3]=array("T'Challa",true);
-        
-    //9
-    $perguntas[8]["questao"]="9. Qual o primeiro par romântico do homem-aranha nas HQ?";
-    $perguntas[8][0]=array("Gwen Stacy",true);
-    $perguntas[8][1]=array("Michelle Jones",false);
-    $perguntas[8][2]=array("Gata Negra",false);
-    $perguntas[8][3]=array("Mary Jane",false);
+        //8
+        $perguntas[7]["questao"]="8. Qual o verdadeiro nome do Pantera Negra?";
+        $perguntas[7][0]=array("Chadwick Boseman",false);
+        $perguntas[7][1]=array("N’Jadaka",false);
+        $perguntas[7][2]=array("T’Chaka",false);
+        $perguntas[7][3]=array("T'Challa",true);
+            
+        //9
+        $perguntas[8]["questao"]="9. Qual o primeiro par romântico do homem-aranha nas HQ?";
+        $perguntas[8][0]=array("Gwen Stacy",true);
+        $perguntas[8][1]=array("Michelle Jones",false);
+        $perguntas[8][2]=array("Gata Negra",false);
+        $perguntas[8][3]=array("Mary Jane",false);
 
-    //10
-    $perguntas[9]["questao"]="10. Os nomes respectivos reais dos personagens Capitão América, Hulk e Homem de Ferro são:";
-    $perguntas[9][0]=array("Tony Stark, Steve Rogers e Bruce Wayne",false);
-    $perguntas[9][1]=array("Steve Rogers, Tony Stark e Bruce Banner",false);
-    $perguntas[9][2]=array("Clark Kent, Bruce Banner e Tony Stark",false);
-    $perguntas[9][3]=array("Steve Rogers, Bruce Banner e Tony Stark",true);
+        //10
+        $perguntas[9]["questao"]="10. Os nomes respectivos reais dos personagens Capitão América, Hulk e Homem de Ferro são:";
+        $perguntas[9][0]=array("Tony Stark, Steve Rogers e Bruce Wayne",false);
+        $perguntas[9][1]=array("Steve Rogers, Tony Stark e Bruce Banner",false);
+        $perguntas[9][2]=array("Clark Kent, Bruce Banner e Tony Stark",false);
+        $perguntas[9][3]=array("Steve Rogers, Bruce Banner e Tony Stark",true);
 
+
+    function salvand(){
+        global $alternancia;
+        $alternancia[0]=$_POST['alternancia_input0'];
+        $alternancia[1]=$_POST['alternancia_input1'];
+        $alternancia[2]=$_POST['alternancia_input2'];
+        $alternancia[3]=$_POST['alternancia_input3'];
+        $alternancia[4]=$_POST['alternancia_input4'];
+        $alternancia[5]=$_POST['alternancia_input5'];
+        $alternancia[6]=$_POST['alternancia_input6'];
+        $alternancia[7]=$_POST['alternancia_input7'];
+        $alternancia[8]=$_POST['alternancia_input8'];
+        $alternancia[9]=$_POST['alternancia_input9'];
+
+
+    }
     if(isset($_POST['proximo'])){
         $pq = $_POST['passar'] + 1;
+        salvand();
         $pt=$_POST['pontos'];
     }
 
     if(isset($_POST['voltar'])){
         $pq = $_POST['passar'] - 1;
         $pt=$_POST['pontos'];
+        salvand();
     }
     
     if(isset($_POST['finalizar'])){
         $final = $_POST['finalizar'];
-
+        salvand();
         $pq = $_POST['passar']+1;
         $pt = $_POST['pontos'];
 
@@ -101,7 +123,7 @@
     }
 
     if(isset($_POST['alternativa'])){
-
+        salvand();
         $alt=$_POST['alternativa'];
         $pt=$_POST['pontos'];
         $pq = $_POST['passar']-1;
@@ -109,7 +131,7 @@
 
         if(is_numeric($alt)){
 
-            if($perguntas[$pq][$alt][1]==true){
+            if($perguntas[$alternancia[$pq]][$alt][1]==true){
                 echo "acertou";
                 $pt = $pt+100;
                 $class[$alt]="acertou";
@@ -209,7 +231,6 @@ function perguntas($posicao){
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="style1.css">
-    <script src='main.js'></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -217,9 +238,20 @@ function perguntas($posicao){
     <h1>QUIZ MARVEL/DC</h1>
 
     <form action="exemplo.php" method="post">
-        <input type="text" name="passar" hidden value="<?php echo $pq?>"/>
-        <input type="text" name="pontos" hidden value="<?php echo $pt?>"/>
-        <?php perguntas($pq) ?>
+        <input type="text" name="passar"  value="<?php echo $pq?>"/>
+        <input type="text" name="pontos" hidden value="<?php echo $pt?>"/><br>
+        <input type="text" name="alternancia_input0" value="<?php echo $alternancia[0]?>"> 
+        <input type="text" name="alternancia_input1" value="<?php echo $alternancia[1]?>">
+        <input type="text" name="alternancia_input2" value="<?php echo $alternancia[2]?>">
+        <input type="text" name="alternancia_input3" value="<?php echo $alternancia[3]?>">
+        <input type="text" name="alternancia_input4" value="<?php echo $alternancia[4]?>">
+        <input type="text" name="alternancia_input5" value="<?php echo $alternancia[5]?>">
+        <input type="text" name="alternancia_input6" value="<?php echo $alternancia[6]?>">
+        <input type="text" name="alternancia_input7" value="<?php echo $alternancia[7]?>">
+        <input type="text" name="alternancia_input8" value="<?php echo $alternancia[8]?>">
+        <input type="text" name="alternancia_input9" value="<?php echo $alternancia[9]?>">
+        
+        <?php perguntas($alternancia[$pq]) ?>
     </form>
 
 </div>
