@@ -72,7 +72,7 @@
     $perguntas[8][3]=array("Mary Jane",false);
 
     //10
-    $perguntas[9]["questao"]="10. Os nomes respectivos reais dos personagens Capitão América, Hulk e Homem de Ferro são:";
+    $perguntas[9]["questao"]="10. Os nomes dos personagens Capitão América, Hulk e Homem de Ferro são:";
     $perguntas[9][0]=array("Tony Stark, Steve Rogers e Bruce Wayne",false);
     $perguntas[9][1]=array("Steve Rogers, Tony Stark e Bruce Banner",false);
     $perguntas[9][2]=array("Clark Kent, Bruce Banner e Tony Stark",false);
@@ -118,7 +118,7 @@
 
                 $alt = $_POST['alternativa'];
                 echo "<div class='errado'>
-                        Errou, tente acertar da próxima vez!!
+                        Errou, quem sabe na próxima vez!!
                     </div>";
                 $class[$alt]="errou";
 
@@ -204,8 +204,8 @@ function perguntas($posicao){
                 echo 
                 "</div><br><br>";
 
-                echo "<input class='recomeco' type='submit' name='recomeco' value='Recomeçar'>
-                    <input type='text' name='passar' hidden value='0'>";
+                echo "<center><input class='recomeco' type='submit' name='recomeco' value='Recomeçar'>
+                    <input type='text' name='passar' hidden value='0'></center>";
         }
     }
 }
