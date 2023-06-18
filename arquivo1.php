@@ -206,7 +206,6 @@ function perguntas($posicao){
             echo "
                 </div> 
             </center>";
-
         }
     }
 }
@@ -225,7 +224,6 @@ function perguntas($posicao){
 </head>
 <body>
 <div class="container-fluid">
-
 
     <form action="arquivo1.php" method="post">
     <input type="text" name="usuario" hidden value="<?php echo $usuario?>"/>
