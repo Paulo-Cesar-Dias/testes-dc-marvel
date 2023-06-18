@@ -3,6 +3,7 @@
     $final = 0;
     $pq = 0;
     $pt = 0;
+    $usuario = "";
     $alt = "";
     $jaexe = "";
 
@@ -78,23 +79,28 @@
 
     if(isset($_POST['proximo'])){
         $pq = $_POST['passar'] + 1;
-        $pt=$_POST['pontos'];
+        $pt = $_POST['pontos'];
     }
 
     if(isset($_POST['voltar'])){
         $pq = $_POST['passar'] - 1;
-        $pt=$_POST['pontos'];
+        $pt = $_POST['pontos'];
     }
     
     if(isset($_POST['finalizar'])){
-        $final = $_POST['finalizar'];
 
+        $final = $_POST['finalizar'];
         $pq = $_POST['passar']+1;
         $pt = $_POST['pontos'];
 
+        if(isset($_POST['usuario'])){
+            $usuario = $_POST['usuario'];
+        }
+
+
         echo "
         <div class = 'finalizando'>
-            Sucesso! Sua pontuação foi: " . $pt . " de 1000";
+            Sucesso " . $usuario . "! Sua pontuação foi: " . $pt . " de 1000";
         echo 
         "</div>";
     }
@@ -114,8 +120,8 @@
                         Parabéns, você acertou!!
                     </div>";
                 $pt = $pt+100;
-                $class[$alt]="parabens";
-                
+                $class[$alt]="parabens";  
+
             }else{
 
                 $alt = $_POST['alternativa'];
@@ -123,11 +129,11 @@
                         Errou, tente acertar da próxima vez!!
                     </div>";
                 $class[$alt]="errou";
+
             }    
         }
 
         $pq = $_POST['passar'];
-
     }
 
 function perguntas($posicao){
@@ -136,6 +142,7 @@ function perguntas($posicao){
     global $pt;
     global $class;
     global $jaexe;
+    global $usuario;
    
     if($posicao==0){
         
@@ -147,8 +154,7 @@ function perguntas($posicao){
                         <center>
                             <h1>INSIRA SEU NOME</h1>
                             <input type='text' 
-                            placeholder= Nickname autocomplete= 'off'
-                            name='mais_homi'>
+                            placeholder = Nickname name ='usuario'>
                             
                             <input type='submit' name='proximo' value='Começar'> 
                         </center>
