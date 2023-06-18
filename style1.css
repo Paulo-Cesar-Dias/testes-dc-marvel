@@ -359,16 +359,7 @@ a[href="#questao1"]{
 }
 
     /* Organização da página */
-    div{
-        margin-bottom: 100%;
-    }
-
-    .espacamento{
-        margin-top:1100px;
-    }
     
-    html {
-        overflow: hidden;
-    }
+
 
     /*class dos selecionáveis*/

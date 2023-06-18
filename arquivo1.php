@@ -90,17 +90,18 @@
         $final = $_POST['finalizar'];
         $pq = $_POST['passar']+1;
         $pt = $_POST['pontos'];
-
+        
         
         $usuario = $_POST['usuario'];
         
-
-
+        
+        
         echo "
         <div class = 'finalizando'>
-            Sucesso " . $usuario . "! Sua pontuação foi: " . $pt . " de 1000";
+        Sucesso " . $usuario . "! Sua pontuação foi: " . $pt . " de 1000";
         echo 
         "</div>";
+        echo "<input type='submit'>";
     }
 
     if(isset($_POST['alternativa'])){
