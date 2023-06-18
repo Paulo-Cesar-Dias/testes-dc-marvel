@@ -80,12 +80,10 @@
     if(isset($_POST['proximo'])){
         $pq = $_POST['passar'] + 1;
         $pt = $_POST['pontos'];
+        $usuario= $_POST['usuario'];
     }
 
-    if(isset($_POST['voltar'])){
-        $pq = $_POST['passar'] - 1;
-        $pt = $_POST['pontos'];
-    }
+
     
     if(isset($_POST['finalizar'])){
 
@@ -93,9 +91,9 @@
         $pq = $_POST['passar']+1;
         $pt = $_POST['pontos'];
 
-        if(isset($_POST['usuario'])){
-            $usuario = $_POST['usuario'];
-        }
+        
+        $usuario = $_POST['usuario'];
+        
 
 
         echo "
@@ -106,7 +104,7 @@
     }
 
     if(isset($_POST['alternativa'])){
-
+        $usuario= $_POST['usuario'];
         $alt = $_POST['alternativa'];
         $pt = $_POST['pontos'];
         $pq = $_POST['passar']-1;
@@ -154,7 +152,7 @@ function perguntas($posicao){
                         <center>
                             <h1>INSIRA SEU NOME</h1>
                             <input type='text' 
-                            placeholder = Nickname name ='usuario'>
+                            placeholder = 'Nickname' name ='usuario'>
                             
                             <input type='submit' name='proximo' value='Começar'> 
                         </center>
@@ -231,6 +229,7 @@ function perguntas($posicao){
 
 
     <form action="arquivo1.php" method="post">
+    <input type="text" name="usuario" hidden value="<?php echo $usuario?>"/>
         <input type="text" name="passar" hidden value="<?php echo $pq?>"/>
         <input type="text" name="pontos" hidden value="<?php echo $pt?>"/>
         <?php perguntas($pq) ?>
