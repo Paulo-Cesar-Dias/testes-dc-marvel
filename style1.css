@@ -2,18 +2,17 @@ body{
     background-image: url(img/px.jpg);
 }
 
-.normal{
-    
+.normal{   
     display: flex;
     margin-bottom: 0%;
 }
 
-.acertou{
+.parabens{
     background-color: rgba(14, 164, 0, 0.668);
     display: flex;
     margin-bottom: 0%;
     border-radius: 20px;
-    width: 40% ;
+    width: 40%;
 }
 
 .errou{
@@ -21,13 +20,39 @@ body{
     display: flex;
     margin-bottom: 0%;
     border-radius: 20px;
-    width: 40% ;
+    width: 40%;
 }
 
 .chora_nao{
-    width: 70px;
-    
+    width: 70px; 
 }
+
+.sucesso{
+    background-color: #0772EB;
+    margin-bottom: 0%;
+    border-radius: 15px;
+    width: 40%;
+    text-align: center;
+    font-weight: bold;
+    color: #ffff;
+    margin-left: 30%;
+    padding: 20px;
+    font-size: 35px;
+}
+
+.errado{
+    background-color: #0772EB;
+    margin-bottom: 0%;
+    border-radius: 15px;
+    width: 40%;
+    text-align: center;
+    font-weight: bold;
+    color: #ffff;
+    margin-left: 30%;
+    padding: 20px;
+    font-size: 35px;
+}
+
 form [type="submit"]{
     display: block;
     background-color: #0772EB;
@@ -319,11 +344,6 @@ a[href="#questao1"]{
     
 
 }
-    
-
-    
-
-
 
     /* Organização da página */
     div{

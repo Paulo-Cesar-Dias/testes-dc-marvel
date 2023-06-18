@@ -97,24 +97,31 @@
             Sua pontuação deu bom " . $pt;
         echo 
         "</div>";
-
     }
 
     if(isset($_POST['alternativa'])){
 
-        $alt=$_POST['alternativa'];
-        $pt=$_POST['pontos'];
+        $alt = $_POST['alternativa'];
+        $pt = $_POST['pontos'];
         $pq = $_POST['passar']-1;
-        $jaexe="disabled";
+        $jaexe = "disabled";
 
         if(is_numeric($alt)){
 
             if($perguntas[$pq][$alt][1]==true){
-                echo "acertou";
+
+                echo "<div class='sucesso'>
+                        Parabéns, você acertou!!
+                    </div>";
                 $pt = $pt+100;
-                $class[$alt]="acertou";
+                $class[$alt]="parabens";
+                
             }else{
-                echo "errou";
+
+                $alt = $_POST['alternativa'];
+                echo "<div class='errado'>
+                        Errou, tente acertar da próxima vez!!
+                    </div>";
                 $class[$alt]="errou";
             }    
         }
@@ -188,15 +195,15 @@ function perguntas($posicao){
                     }else{
                         echo "<input type='submit' name='proximo' value='Próximo'>";
                     }
+
             echo "
                 </div> 
             </center>";
+
         }else{
             echo "Exibindo tela final";
         }
-
     }
-
 }
 
 ?>
