@@ -6,6 +6,7 @@
     $usuario = "";
     $alt = "";
     $jaexe = "";
+    $recomeco = "";
 
     $class=array("normal","normal","normal","normal");
     $perguntas[0]["questao"]="1. Qual o verdadeiro nome do lanterna verde?";
@@ -101,7 +102,7 @@
     }
 
     if(isset($_POST['recomeco'])){
-        
+        $recomeco = $_POST['recomeco'];
     }
 
     if(isset($_POST['alternativa'])){
@@ -152,7 +153,7 @@ function perguntas($posicao){
                         <center>
                             <h1>INSIRA SEU NOME</h1>
                             <input type='text' 
-                            placeholder = 'Nickname' name ='usuario'>
+                            placeholder = 'Nickname' name ='usuario'><br><br>
                             
                             <input type='submit' name='proximo' value='Começar'> 
                         </center>
@@ -206,8 +207,6 @@ function perguntas($posicao){
                 </div> 
             </center>";
 
-        }else{
-            
         }
     }
 }
