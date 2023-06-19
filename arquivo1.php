@@ -121,7 +121,10 @@
                         Errou, quem sabe na próxima vez!!
                     </div>";
                 $class[$alt]="errou";
-                $pt = $pt-50;
+                if ($pt>50) {
+                   
+                    $pt = $pt-50;
+                }
 
             }    
         }
