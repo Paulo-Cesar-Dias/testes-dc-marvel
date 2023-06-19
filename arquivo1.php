@@ -66,9 +66,9 @@
         
     //9
     $perguntas[8]["questao"]="9. Qual o primeiro par romântico do homem-aranha nas HQ?";
-    $perguntas[8][0]=array("Gwen Stacy",true);
-    $perguntas[8][1]=array("Michelle Jones",false);
-    $perguntas[8][2]=array("Gata Negra",false);
+    $perguntas[8][0]=array("Gwen Stacy",false);
+    $perguntas[8][1]=array("Liz Allen",true);
+    $perguntas[8][2]=array("Michelle Jones",false);
     $perguntas[8][3]=array("Mary Jane",false);
 
     //10
@@ -145,7 +145,7 @@ function perguntas($posicao){
                         <center>
                             <h1>INSIRA SEU NOME</h1>
                             <input type='text' 
-                            placeholder = 'Nickname' name ='usuario'><br><br>
+                            placeholder = 'Nickname' name ='usuario' autocomplete= 'off'><br><br>
                             
                             <input type='submit' name='proximo' value='Começar'> 
                         </center>
