@@ -121,6 +121,7 @@
                         Errou, quem sabe na próxima vez!!
                     </div>";
                 $class[$alt]="errou";
+                $pt = $pt-50;
 
             }    
         }
@@ -129,11 +130,7 @@
 
 function perguntas($posicao){
 
-    global $perguntas;
-    global $pt;
-    global $class;
-    global $jaexe;
-    global $usuario;
+    global $perguntas,$pt,$class,$jaexe,$usuario;
    
     if($posicao==0){
         

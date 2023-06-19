@@ -2,6 +2,7 @@
     body{
         background-image: url(img/px.jpg);
     }
+
     .area-login{
             margin-top: 20px;
             display: flex;
@@ -12,6 +13,7 @@
             align-items: center;
             
         }
+
         .login{
             display: flex;
             flex-direction: column;
@@ -25,11 +27,13 @@
             
             
         }
+
         .login form{
             display: flex;
             width: 100%;
             flex-direction: column;
         }
+
         .login input{
             
             margin-top: 10px;
@@ -41,10 +45,10 @@
             outline: none;
             border-radius: 8px;
         }
+
         .login img{
             width: 195px;
-            height: auto;
-           
+            height: auto; 
         }
         
         form [type="submit"]{
@@ -54,9 +58,9 @@
             text-transform: uppercase;
             font-weight: bold;
             color: #ffff;
-            cursor: pointer;
-            
+            cursor: pointer;   
         }
+
         h1{
             display: block;
             background-color: #e20c0c;
@@ -66,26 +70,30 @@
             font-weight: bold;
             cursor: pointer;
             border-radius: 8px;
-            font-family: Arial, Helvetica, sans-serif;
-            
+            font-family: Arial, Helvetica, sans-serif;   
         }
+
         footer{
             color: #ffff;
         }
+
         .main_footer          { 
-	background-color:#0772EB; 
-	color:#fff; 
-	font-size:0.875em; 
-    margin-top: 80px;
-}
+            background-color:#0772EB; 
+            color:#fff; 
+            font-size:0.875em; 
+            margin-top: 80px;
+        }
+
 .main_footer .content { float:left; width:90%; margin:0 5%; padding: 1em 0; }
-.container { float:left; width:100%; }
+.container { float:left; width:100%; text-align: center;}
 .colfooter { 
 	width:100%; 
 	height:auto; 
 	float:left; 
+    margin-left: 35%;
 	margin-bottom:2em;
 }
+
 .colfooter ul        { width:100%; float:left; }
 .colfooter ul li     { padding:0.2em 0em; }
 .colfooter ul li a   { text-decoration:none; color:#ffffff; font-size:1em; }
@@ -99,6 +107,7 @@
 	margin-bottom:0.5em; 
 	border-bottom:1px #e20c0c solid;
 }
+
 .colfooter p  { font-family:'open_sanslight'; color:#ffffff; font-size:1em; height:5px; } 
 .botao{
   padding: 10px 12px;
@@ -109,11 +118,10 @@
   position: relative;
   text-decoration: none;
   display:inline-block;
-  margin-right:7px;
-  
+  margin-right:7px; 
 }
+
 .botao::before {
-  
   content: '';
   position: absolute;
   bottom: 50%;
@@ -131,8 +139,8 @@
   -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
   transition: transform 0.4s cubic-bezier(1, 0, 0, 1)
 }
+
 .botao:hover::before {
-  
   -webkit-transform-origin: right top;
   -ms-transform-origin: right top;
   transform-origin: right top;
@@ -140,6 +148,7 @@
   -ms-transform: scale(1, 1);
   transform: scale(1, 1)
 }
+
 .botao{
     font-size:1em;
     color:#ffffff;
@@ -153,13 +162,14 @@
     -o-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
     background: transparent!important;
-    z-index:10;
-    
+    z-index:10;    
 }
+
 .botao:hover{
     border: 1px solid #262626;
     color: #2adee3!important;
 }
+
 .botao::before {
     content: '';
     width: 0%;
@@ -180,8 +190,8 @@
     transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
     box-shadow:2px 0px 14px rgba(0,0,0,.6);
 } 
+
 .botao::after {
- 
     content: '';
     width: 0%;
     height: 100%;
@@ -201,15 +211,17 @@
     transition: all .4s cubic-bezier(.2,.95,.57,.99);
     box-shadow: 2px 0px 14px rgba(0,0,0,.6);
 }
+
 .botao:hover::before, .botao:hover::before{
-   
     opacity:1;
     width: 120%;
 }
+
 .botao:hover::after, .botao:hover::after{
     opacity:1;
     width: 150%;
 }
+
 .main_footer_copy { background-color:#e20c0c; width:100%; float:left; text-align:center; padding:.5em 0em; }
 .main_footer_copy p { font-family:'open_sanslight'; font-size:1em; color:#e1e0e0; height:20px; }
 .main_footer_copy .m-b-footer   { margin-bottom:0.5em; }
